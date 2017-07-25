@@ -34,7 +34,7 @@ restService.post('/hook', function (req, res) {
         console.log('result: ', speech);
 
         return res.json({
-            speech: 'Dima the king 1 1 - ' +speech,
+            speech: 'Dima the king 1 1 1 - ' +speech,
             displayText: 'Dima the king 1 1 - ' + speech,
             source: 'apiai-webhook-sample'
         });
