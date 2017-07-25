@@ -61,7 +61,7 @@ restService.post('/hook', function (req, res) {
                             data.forEach(function(element) {
                                 element.cities.forEach(function(city) {
                                     cost_of_live=city.cost_of_live; 
-                                });
+                                }); 
                             });
 
                             speech="cost of living in " +requestBody.result.parameters.geo-city+ " is "+cost_of_live+"GBP per month ";
