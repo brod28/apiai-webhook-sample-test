@@ -66,6 +66,12 @@ restService.post('/hook', function (req, res) {
 
                             speech="cost of living in " +requestBody.result.parameters.geo-city+ " is "+cost_of_live+"GBP per month ";
                         }
+                        else{
+                            speech="no geo-city"
+                        }
+                    }
+                    else{
+                        speech="no parameters"
                     }
                 }
                 else{
