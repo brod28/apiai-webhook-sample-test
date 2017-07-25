@@ -135,8 +135,8 @@ var func=function (req, res) {
         console.log('result: ', speech);
 
         return res.json({
-            speech: speech,
-            displayText: speech,
+//            speech: speech,
+//            displayText: speech,
             source: 'apiai-webhook-sample',
             contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":{"cost_of_live":cost_of_live,"cost_of_live_in":requestBody.result.parameters["geo-city"]}}]
         });
