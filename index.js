@@ -176,18 +176,31 @@ var func=function (req, res) {
                
                 // logic for input.city.rent
                 else if (requestBody.result.action=="input.city.rent") {
+                    // default values 
+                    parameterscontextout["original_cost_of_rent_range"]="Unknown";
+                    parameterscontextout["distination_cost_of_rent_range"]="Unknown";
+                    
+                    // find the range of the rent cost
                     data.forEach(function(element) {
                         element.cities.forEach(function(city) {
                             if(parameterscontextout["distination_city"]==city.name){
                                 parameterscontextout["distination_cost_of_rent_range"]=city.cost_of_rent_range; 
                             }
+                            if(parameterscontextout["original_city"]==city.name){
+                                parameterscontextout["original_cost_of_rent_range"]=city.cost_of_rent_range; 
+                            }
                         }); 
                     });
-                    speech="average rent in" 
+
+                    // build the speech to the user
+                    speech="average rent in " 
                     +parameterscontextout["distination_city"]
                     +" is "
                     +parameterscontextout["distination_cost_of_rent_range"]
-                    +"GBP per month" 
+                    +"GBP per month and your city now "
+                    + parameterscontextout["original_city"]
+                    + " it is about "
+                    + parameterscontextout["original_cost_of_rent_range"]
                     +", but it depends what kind of flat do you want?";   
 
 
@@ -206,7 +219,7 @@ var func=function (req, res) {
             speech: speech,
             displayText: speech,
             source: 'apiai-webhook-sample',
-            contextOut: [{"name":"datakeeper", "lifespan":99, "parameters":parameterscontextout}]
+            contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
         });
     } catch (err) {
         console.error("Can't process request", err);
