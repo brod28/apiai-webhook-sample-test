@@ -10,7 +10,25 @@ const data=[
     "cities": [
       {
         "name": "Tel Aviv",
-        "cost_of_live": "320"
+        "cost_of_live": "320",
+        "cost_of_rent":[
+            {
+                "type_of_flat":"entire flat",
+                "cost_employee": "1500",
+                "cost_general": "1600",
+            },
+            {
+                "type_of_flat":"private room",
+                "cost_employee": "500",
+                "cost_general": "600",
+            },
+            {
+                "type_of_flat":"shared room",
+                "cost_employee": "300",
+                "cost_general": "300",
+            }
+
+        ]
       }
     ]
   },
@@ -57,6 +75,7 @@ var func=function (req, res) {
 
     try {
         var speech = 'empty speech';
+        let  cost_of_live="Unknown";
 
         if (req.body) {
             var requestBody = req.body;
@@ -86,15 +105,29 @@ var func=function (req, res) {
                         speech="no parameters"
                     }
                 }
-                else{
-                    if (requestBody.result.resolvedQuery) {
-                        speech += requestBody.result.resolvedQuery;
-                        speech += ' ';
-                    }
+                if (requestBody.result.action=="input.city") {
+                    if (requestBody.result.parameters) {
+                        if (requestBody.result.parameters["geo-city"]) {
+                            data.forEach(function(element) {
+                                element.cities.forEach(function(city) {
+                                    if(requestBody.result.parameters["geo-city"]==city.name){
+                                        cost_of_live=city.cost_of_live; 
+                                    }
+                                }); 
+                            });
 
-                    if (requestBody.result.action) {
-                        speech += 'action: ' + requestBody.result.action;
+                            speech="cost of living in " +requestBody.result.parameters["geo-city"]+ " is "+cost_of_live+"GBP per month ";
+                        }
+                        else{
+                            speech="no geo-city"
+                        }
                     }
+                    else{
+                        speech="no parameters"
+                    }
+                }
+                else{
+                    speech="no action"
                 }
             }
         }
@@ -104,7 +137,8 @@ var func=function (req, res) {
         return res.json({
             speech: speech,
             displayText: speech,
-            source: 'apiai-webhook-sample'
+            source: 'apiai-webhook-sample',
+            contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":{"cost_of_live":cost_of_live,"cost_of_live_in":requestBody.result.parameters["geo-city"]}}]
         });
     } catch (err) {
         console.error("Can't process request", err);
