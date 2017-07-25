@@ -138,7 +138,7 @@ var func=function (req, res) {
 //            speech: speech,
 //            displayText: speech,
             source: 'apiai-webhook-sample',
-            contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":{"cost_of_live":cost_of_live,"cost_of_live_in":requestBody.result.parameters["geo-city"]}}]
+            contextOut: [{"name":"datakeeper", "lifespan":99, "parameters":{"cost_of_live":cost_of_live,"cost_of_live_in":requestBody.result.parameters["geo-city"]}}]
         });
     } catch (err) {
         console.error("Can't process request", err);
