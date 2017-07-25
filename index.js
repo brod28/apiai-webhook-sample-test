@@ -175,7 +175,7 @@ var func=function (req, res) {
                 }
                
                 // logic for input.city.rent
-                if (requestBody.result.action=="input.city.rent") {
+                else if (requestBody.result.action=="input.city.rent") {
                     data.forEach(function(element) {
                         element.cities.forEach(function(city) {
                             if(parameterscontextout["distination_city"]==city.name){
@@ -192,15 +192,14 @@ var func=function (req, res) {
 
 
                 }
-                    else{
-                        speech="no parameters"
-                    }
-                }
                 else{
                     speech="no action"
                 }            
+            }
+            else{
+                speech="no body to the request"
+            }            
         }
-
         console.log('result: ', speech);
 
         return res.json({
@@ -225,42 +224,63 @@ var func=function (req, res) {
 restService.get('/hook',function(req,res) {
     var req={"body":
                     {
-                "id": "8f89439f-ea75-42a0-a095-cc33e3787673",
-                "timestamp": "2017-07-25T18:37:38.374Z",
-                "lang": "en",
-                "result": {
-                    "source": "agent",
-                    "resolvedQuery": "I live in Tel Aviv",
-                    "action": "input.city",
-                    "actionIncomplete": false,
-                    "parameters": {
-                    "geo-city": "Tel Aviv"
-                    },
-                    "contexts": [],
-                    "metadata": {
-                    "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
-                    "webhookUsed": "true",
-                    "webhookForSlotFillingUsed": "true",
-                    "intentName": "City"
-                    },
-                    "fulfillment": {
-                    "speech": "",
-                    "messages": [
-                        {
-                        "type": 0,
-                        "speech": ""
-                        }
-                    ]
-                    },
-                    "score": 1
-                },
-                "status": {
-                    "code": 206,
-                    "errorType": "partial_content",
-                    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
-                },
-                "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
-                }
+  "id": "1948e6fc-4e60-40af-b45b-5c7f3eaa5479",
+  "timestamp": "2017-07-25T21:07:35.841Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "I live in Berlin",
+    "action": "input.city",
+    "actionIncomplete": false,
+    "parameters": {
+      "geo-city": "Berlin"
+    },
+    "contexts": [
+      {
+        "name": "datakeeper",
+        "parameters": {
+          "distination_city": "London",
+          "original_city": "Berlin",
+          "original_cost_of_live": "500",
+          "distination_cost_of_live": "800"
+        },
+        "lifespan": 99
+      },
+      {
+        "name": "city-followup",
+        "parameters": {
+          "geo-city": "Berlin",
+          "geo-city.original": "Berlin"
+        },
+        "lifespan": 2
+      }
+    ],
+    "metadata": {
+      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "true",
+      "webhookResponseTime": 595,
+      "intentName": "City"
+    },
+    "fulfillment": {
+      "speech": "no parameters",
+      "source": "apiai-webhook-sample",
+      "displayText": "no parameters",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "no parameters"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
+}
 }
 return func(req,{});
 
