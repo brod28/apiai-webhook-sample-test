@@ -11,6 +11,7 @@ const data=[
       {
         "name": "Tel Aviv",
         "cost_of_live": "320",
+        "cost_of_rent_range": "300-1500",
         "cost_of_rent":[
             {
                 "type_of_flat":"entire flat",
@@ -38,7 +39,26 @@ const data=[
     "cities": [
       {
         "name": "London",
-        "cost_of_live": "800"
+        "cost_of_live": "800",
+        "cost_of_rent_range": "400-2500",
+        "cost_of_rent":[
+            {
+                "type_of_flat":"entire flat",
+                "cost_employee": "2500",
+                "cost_general": "2600",
+            },
+            {
+                "type_of_flat":"private room",
+                "cost_employee": "800",
+                "cost_general": "800",
+            },
+            {
+                "type_of_flat":"shared room",
+                "cost_employee": "500",
+                "cost_general": "400",
+            }
+
+        ]
       },
       {
         "name": "Liverpool",
@@ -56,7 +76,26 @@ const data=[
     "cities": [
       {
         "name": "Berlin",
-        "cost_of_live": "500"
+        "cost_of_live": "500",
+        "cost_of_rent_range": "50-600",
+        "cost_of_rent":[
+            {
+                "type_of_flat":"entire flat",
+                "cost_employee": "500",
+                "cost_general": "600",
+            },
+            {
+                "type_of_flat":"private room",
+                "cost_employee": "200",
+                "cost_general": "200",
+            },
+            {
+                "type_of_flat":"shared room",
+                "cost_employee": "50",
+                "cost_general": "70",
+            }
+
+        ]
       },
       {
         "name": "Munich",
@@ -75,27 +114,56 @@ var func=function (req, res) {
 
     try {
         var speech = 'empty speech';
-        let  cost_of_live="Unknown";
+        
 
         if (req.body) {
             var requestBody = req.body;
 
+            // always take with me the stored parameters
+            var parameterscontextout={};
+            if (requestBody.result.contexts) {
+                requestBody.result.contexts.forEach(function(context) {
+                    if(context.name=="datakeeper"){
+                        parameterscontextout=context.parameters;
+                    }
+                });
+            }
+
             if (requestBody.result) {
                 speech = '';
-
+                // logic for input.city action
                 if (requestBody.result.action=="input.city") {
                     if (requestBody.result.parameters) {
                         if (requestBody.result.parameters["geo-city"]) {
-                            let  cost_of_live="Unknown";
+                            // set the distination city and the original city
+                            parameterscontextout["distination_city"]="London";
+                            parameterscontextout["original_city"]=requestBody.result.parameters["geo-city"];
+                            // default values for original cost of live
+                            parameterscontextout["original_cost_of_live"]="Unknown";
+                            parameterscontextout["original_cost_of_live"]="Unknown";
+                            
                             data.forEach(function(element) {
                                 element.cities.forEach(function(city) {
-                                    if(requestBody.result.parameters["geo-city"]==city.name){
-                                        cost_of_live=city.cost_of_live; 
+                                    if(parameterscontextout["original_city"]==city.name){
+                                        parameterscontextout["original_cost_of_live"]=city.cost_of_live; 
+                                    }
+                                    if(parameterscontextout["distination_city"]==city.name){
+                                        parameterscontextout["distination_cost_of_live"]=city.cost_of_live; 
                                     }
                                 }); 
                             });
 
-                            speech="cost of living in " +requestBody.result.parameters["geo-city"]+ " is "+cost_of_live+"GBP per month ";
+                            // build the speech to the user
+                            speech="cost of living in " 
+                            +parameterscontextout["original_city"]
+                            +" is "
+                            +parameterscontextout["original_cost_of_live"]
+                            +"GBP per month in compare to cost of live of "
+                            +parameterscontextout["distination_cost_of_live"]
+                            +"GBP in a place you will move to, "
+                            +parameterscontextout["distination_city"]
+                            
+                            +", are you ready continue to rent budget?";   
                         }
                         else{
                             speech="no geo-city"
@@ -105,31 +173,32 @@ var func=function (req, res) {
                         speech="no parameters"
                     }
                 }
-                if (requestBody.result.action=="input.city") {
-                    if (requestBody.result.parameters) {
-                        if (requestBody.result.parameters["geo-city"]) {
-                            data.forEach(function(element) {
-                                element.cities.forEach(function(city) {
-                                    if(requestBody.result.parameters["geo-city"]==city.name){
-                                        cost_of_live=city.cost_of_live; 
-                                    }
-                                }); 
-                            });
+               
+                // logic for input.city.rent
+                if (requestBody.result.action=="input.city.rent") {
+                    data.forEach(function(element) {
+                        element.cities.forEach(function(city) {
+                            if(parameterscontextout["distination_city"]==city.name){
+                                parameterscontextout["distination_cost_of_rent_range"]=city.cost_of_rent_range; 
+                            }
+                        }); 
+                    });
+                    speech="average rent in" 
+                    +parameterscontextout["distination_city"]
+                    +" is "
+                    +parameterscontextout["distination_cost_of_rent_range"]
+                    +"GBP per month" 
+                    +", but it depends what kind of flat do you want?";   
 
-                            speech="cost of living in " +requestBody.result.parameters["geo-city"]+ " is "+cost_of_live+"GBP per month ";
-                        }
-                        else{
-                            speech="no geo-city"
-                        }
-                    }
+
+                }
                     else{
                         speech="no parameters"
                     }
                 }
                 else{
                     speech="no action"
-                }
-            }
+                }            
         }
 
         console.log('result: ', speech);
@@ -138,7 +207,7 @@ var func=function (req, res) {
             speech: speech,
             displayText: speech,
             source: 'apiai-webhook-sample',
-            contextOut: [{"name":"datakeeper", "lifespan":99, "parameters":{"cost_of_live":cost_of_live,"cost_of_live_in":requestBody.result.parameters["geo-city"]}}]
+            contextOut: [{"name":"datakeeper", "lifespan":99, "parameters":parameterscontextout}]
         });
     } catch (err) {
         console.error("Can't process request", err);
