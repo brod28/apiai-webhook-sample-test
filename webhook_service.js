@@ -39,6 +39,7 @@ response:function (requestBody) {
 
 var logic_proccessor=function(requestBody,parameterscontextout){
               var speech = '';
+              parameterscontextout["action"]=requestBody.result.action;
                 // logic for input.city action
                 if (requestBody.result.action=="input.city") {
                     if (requestBody.result.parameters) {
@@ -200,6 +201,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                 return {
             speech: speech,
             displayText: speech,
+            data:parameterscontextout,
             source: 'apiai-webhook-sample',
             contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
         };

@@ -130,63 +130,62 @@ module.exports = {
 ],
  req:{"body":
     {
-  "id": "757bf7c9-fddf-42a1-923b-50df294ae51f",
-  "timestamp": "2017-07-26T20:29:43.761Z",
+  "id": "17e5586c-b9a9-4782-a627-7382b866de87",
+  "timestamp": "2017-07-26T21:12:59.21Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "yes",
-    "action": "input.city.rent",
+    "resolvedQuery": "entire flat",
+    "action": "input.typeofflat",
     "actionIncomplete": false,
-    "parameters": {},
+    "parameters": {
+      "FlatType": "Entire flat"
+    },
     "contexts": [
-      {
-        "name": "rent-yes-followup",
-        "parameters": {},
-        "lifespan": 2
-      },
       {
         "name": "datakeeper",
         "parameters": {
+          "distination_cost_of_rent_range": "400-2500",
+          "Neighborhood": "Shordith",
+          "Neighborhood.original": "Shordith",
           "original_cost_of_live": "320",
           "original_city": "Tel Aviv",
+          "distination_Neighborhood": "Shordith",
+          "FlatType.original": "entire flat",
+          "FlatType": "Entire flat",
+          "original_cost_of_rent_range": "300-1500",
           "distination_cost_of_live": "800",
+          "distination_neighborhood_commute_time": "40",
           "distination_city": "London"
         },
-        "lifespan": 99
-      },
-      {
-        "name": "city-followup",
-        "parameters": {
-          "geo-city": "Tel Aviv",
-          "geo-city.original": "Tel Aviv"
-        },
-        "lifespan": 1
+        "lifespan": 100
       }
     ],
     "metadata": {
-      "intentId": "75fc8fc5-1b4a-43d4-98e6-493c3965a20f",
+      "intentId": "b1c2f0c0-3712-479b-9dd5-eae226c19d9d",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "true",
-      "intentName": "Rent - yes"
+      "webhookResponseTime": 131,
+      "intentName": "typeofflat"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress.",
+      "source": "apiai-webhook-sample",
+      "displayText": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress.",
       "messages": [
         {
           "type": 0,
-          "speech": ""
+          "speech": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress."
         }
       ]
     },
-    "score": 1
+    "score": 0.7099999785423279
   },
   "status": {
-    "code": 206,
-    "errorType": "partial_content",
-    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
+    "code": 200,
+    "errorType": "success"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
-}               
+}   
 }
 };
