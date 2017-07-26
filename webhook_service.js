@@ -130,7 +130,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                                     if(neighborhood.name==requestBody.result.parameters["Neighborhood"]){
                                         parameterscontextout["distination_Neighborhood"]=requestBody.result.parameters["Neighborhood"]; 
                                         neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
-                                            cost_of_rent_per_neighborhood=" in "
+                                            cost_of_rent_per_neighborhood+=" in "
                                             +cost_of_rent.type_of_flat
                                             +" average price "
                                             +cost_of_rent.cost_general
