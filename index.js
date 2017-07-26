@@ -132,7 +132,7 @@ var func=function (req, res) {
 
 
 restService.get('/hook',function(req,res) {
-var req = require('data').req; 
+var req = require('data').req;  
 return func(req,{});
 
 });
