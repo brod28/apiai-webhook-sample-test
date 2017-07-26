@@ -6,12 +6,9 @@ module.exports = {
 response:function (requestBody) {
 
 
-    console.log('hook request');
-
     
-        var speech = 'empty speech';
         
-
+        var retVal={};
      
 
             // always take with me the stored parameters
@@ -25,7 +22,23 @@ response:function (requestBody) {
             }
 
             if (requestBody.result) {
-                speech = '';
+                retVal=logic_proccessor(requestBody,parameterscontextout);
+  
+            }
+            else{
+                console.log("no body to the request");
+            }            
+       
+        return retVal;
+
+        
+}
+
+
+};
+
+var logic_proccessor=function(requestBody,parameterscontextout){
+              var speech = '';
                 // logic for input.city action
                 if (requestBody.result.action=="input.city") {
                     if (requestBody.result.parameters) {
@@ -61,11 +74,11 @@ response:function (requestBody) {
                             +", are you ready continue to rent budget?";   
                         }
                         else{
-                            speech="no geo-city"
+                             console.log("no geo-city");
                         }
                     }
                     else{
-                        speech="no parameters"
+                             console.log("no parameters");
                     }
                 }
                
@@ -99,22 +112,14 @@ response:function (requestBody) {
                     +"GBP, but it depends what kind of flat do you want?";   
                 }
                 else{
-                    speech="no action"
+                    console.log("no action");
                 }            
-            }
-            else{
-                speech="no body to the request"
-            }            
-       
-        console.log('result: ', speech);
 
-        return {
+                return {
             speech: speech,
             displayText: speech,
             source: 'apiai-webhook-sample',
             contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
         };
+
 }
-
-
-};
