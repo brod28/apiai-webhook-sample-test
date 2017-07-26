@@ -128,7 +128,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                                     if(neighborhood.name==requestBody.result.parameters["Neighborhood"]){
                                         parameterscontextout["distination_Neighborhood"]=requestBody.result.parameters["Neighborhood"]; 
                                         neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
-                                            cost_of_rent_per_neighborhood="in "
+                                            cost_of_rent_per_neighborhood=" in "
                                             +cost_of_rent.type_of_flat
                                             +" average price "
                                             +cost_of_rent.cost_general
@@ -142,16 +142,11 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                         }); 
                     });
 
-                                        // build the speech to the user
+                    // build the speech to the user
                     speech="you choosed " 
-                    +parameterscontextout["distination_city"]
-                    +" is "
-                    +parameterscontextout["distination_cost_of_rent_range"]
-                    +"GBP per month and your city now "
-                    + parameterscontextout["original_city"]
-                    + " it is about "
-                    + parameterscontextout["original_cost_of_rent_range"]
-                    +"GBP, but it depends what kind of flat do you want?";   
+                    +parameterscontextout["distination_Neighborhood"]
+                    +cost_of_rent_per_neighborhood
+                    +", pick another neighborhood or if you are happy with this one pick type of flat you want";   
 
                 }
                 else{
