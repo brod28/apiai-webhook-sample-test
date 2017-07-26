@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const data = require('data').rent;
+const data = require('./data.js');
 
 const restService = express();
 restService.use(bodyParser.json());
@@ -41,7 +41,7 @@ var func=function (req, res) {
                             parameterscontextout["original_cost_of_live"]="Unknown";
                             parameterscontextout["original_cost_of_live"]="Unknown";
                             
-                            data.forEach(function(element) {
+                            data.rent.forEach(function(element) {
                                 element.cities.forEach(function(city) {
                                     if(parameterscontextout["original_city"]==city.name){
                                         parameterscontextout["original_cost_of_live"]=city.cost_of_live; 
@@ -80,7 +80,7 @@ var func=function (req, res) {
                     parameterscontextout["distination_cost_of_rent_range"]="Unknown";
                     
                     // find the range of the rent cost
-                    data.forEach(function(element) {
+                    data.rent.forEach(function(element) {
                         element.cities.forEach(function(city) {
                             if(parameterscontextout["distination_city"]==city.name){
                                 parameterscontextout["distination_cost_of_rent_range"]=city.cost_of_rent_range; 
@@ -132,7 +132,7 @@ var func=function (req, res) {
 
 
 restService.get('/hook',function(req,res) {
-var req = require('data').req;  
+var req = data.req;  
 return func(req,{});
 
 });
