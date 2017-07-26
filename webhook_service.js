@@ -57,6 +57,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                                     }
                                     if(parameterscontextout["distination_city"]==city.name){
                                         parameterscontextout["distination_cost_of_live"]=city.cost_of_live; 
+                                        
                                     }
                                 }); 
                             });
@@ -93,6 +94,9 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                         element.cities.forEach(function(city) {
                             if(parameterscontextout["distination_city"]==city.name){
                                 parameterscontextout["distination_cost_of_rent_range"]=city.cost_of_rent_range; 
+                                city.neighborhoods.forEach(function(neighborhood) {
+                                    neighborhoods.push(neighborhood.name);
+                                });
                             }
                             if(parameterscontextout["original_city"]==city.name){
                                 parameterscontextout["original_cost_of_rent_range"]=city.cost_of_rent_range; 
@@ -109,7 +113,46 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     + parameterscontextout["original_city"]
                     + " it is about "
                     + parameterscontextout["original_cost_of_rent_range"]
+                    +"GBP, here are some popular neighborhoods "
+                    +neighborhoods.split(",")
+                    +", which one you want learn more?";   
+                }
+                // pick neighborhood and cost education
+                else if (requestBody.result.action=="input.neighborhood") {
+                    var cost_of_rent_per_neighborhood="";
+                    // find the rent cost per flat type
+                    data.rent.forEach(function(element) {
+                        element.cities.forEach(function(city) {
+                            if(parameterscontextout["distination_city"]==city.name){
+                                city.neighborhoods.forEach(function(neighborhood) {
+                                    if(neighborhood.name==requestBody.result.parameters["Neighborhood"]){
+                                        parameterscontextout["distination_Neighborhood"]=requestBody.result.parameters["Neighborhood"]; 
+                                        neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
+                                            cost_of_rent_per_neighborhood="in "
+                                            +cost_of_rent.type_of_flat
+                                            +" average price "
+                                            +cost_of_rent.cost_general
+                                            +" employee average price "
+                                            +cost_of_rent.cost_employee
+                                            + " ";
+                                        });
+                                    }
+                                });
+                            }
+                        }); 
+                    });
+
+                                        // build the speech to the user
+                    speech="you choosed " 
+                    +parameterscontextout["distination_city"]
+                    +" is "
+                    +parameterscontextout["distination_cost_of_rent_range"]
+                    +"GBP per month and your city now "
+                    + parameterscontextout["original_city"]
+                    + " it is about "
+                    + parameterscontextout["original_cost_of_rent_range"]
                     +"GBP, but it depends what kind of flat do you want?";   
+
                 }
                 else{
                     console.log("no action");

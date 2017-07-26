@@ -39,23 +39,47 @@ module.exports = {
         "name": "London",
         "cost_of_live": "800",
         "cost_of_rent_range": "400-2500",
-        "cost_of_rent":[
-            {
-                "type_of_flat":"entire flat",
-                "cost_employee": "2500",
-                "cost_general": "2600",
-            },
-            {
-                "type_of_flat":"private room",
-                "cost_employee": "800",
-                "cost_general": "800",
-            },
-            {
-                "type_of_flat":"shared room",
-                "cost_employee": "500",
-                "cost_general": "400",
-            }
-
+        "neighborhoods":[
+          {
+            "name":"Islington",
+            "cost_of_rent":[
+                {
+                    "type_of_flat":"entire flat",
+                    "cost_employee": "2500",
+                    "cost_general": "2600",
+                },
+                {
+                    "type_of_flat":"private room",
+                    "cost_employee": "800",
+                    "cost_general": "800",
+                },
+                {
+                    "type_of_flat":"shared room",
+                    "cost_employee": "500",
+                    "cost_general": "400",
+                }
+            ],
+          },
+          {
+            "name":"Shordith",
+            "cost_of_rent":[
+                {
+                    "type_of_flat":"entire flat",
+                    "cost_employee": "1500",
+                    "cost_general": "1600",
+                },
+                {
+                    "type_of_flat":"private room",
+                    "cost_employee": "600",
+                    "cost_general": "500",
+                },
+                {
+                    "type_of_flat":"shared room",
+                    "cost_employee": "400",
+                    "cost_general": "500",
+                }
+            ],
+          }
         ]
       },
       {
