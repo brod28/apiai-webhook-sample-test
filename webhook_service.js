@@ -119,9 +119,10 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     +neighborhoods.join(',')
                     +", which one you want learn more?";   
                 }
-                // pick neighborhood and cost education
+                // pick neighborhood and cost education 
                 else if (requestBody.result.action=="input.neighborhood") {
                     var cost_of_rent_per_neighborhood="";
+                    var neighborhood_commute_time="";
                     // find the rent cost per flat type
                     data.rent.forEach(function(element) {
                         element.cities.forEach(function(city) {
@@ -129,14 +130,14 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                                 city.neighborhoods.forEach(function(neighborhood) {
                                     if(neighborhood.name==requestBody.result.parameters["Neighborhood"]){
                                         parameterscontextout["distination_Neighborhood"]=requestBody.result.parameters["Neighborhood"]; 
+                                        parameterscontextout["distination_neighborhood_commute_time"]=neighborhood.commute_time;
                                         neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
                                             cost_of_rent_per_neighborhood+=" in "
                                             +cost_of_rent.type_of_flat
                                             +" average price "
                                             +cost_of_rent.cost_general
                                             +" employee average price "
-                                            +cost_of_rent.cost_employee
-                                            + " ";
+                                            +cost_of_rent.cost_employee;
                                         });
                                     }
                                 });
@@ -147,8 +148,49 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     // build the speech to the user
                     speech="you choosed " 
                     +parameterscontextout["distination_Neighborhood"]
+                    +"with commute time of "
+                    +parameterscontextout["distination_neighborhood_commute_time"]+"minutes"
+                    + " "
                     +cost_of_rent_per_neighborhood
                     +", pick another neighborhood or if you are happy with this one pick type of flat you want";   
+
+                }
+                // picked type of flat
+                else if (requestBody.result.action=="input.typeofflat") {
+                    var cost_of_rent_per_neighborhood="";
+                    // find the rent cost per flat type
+                    data.rent.forEach(function(element) {
+                        element.cities.forEach(function(city) {
+                            if(parameterscontextout["distination_city"]==city.name){
+                                city.neighborhoods.forEach(function(neighborhood) {
+                                    if(neighborhood.name==parameterscontextout["distination_Neighborhood"]){
+                                        neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
+                                            if(cost_of_rent.type_of_flat==requestBody.result.parameters["FlatType"]){
+                                                parameterscontextout["distination_type_of_flat"]=cost_of_rent.type_of_flat;
+                                                parameterscontextout["distination_cost_of_rent_general"]=cost_of_rent.cost_general;
+                                                parameterscontextout["distination_cost_of_rent_employee"]=cost_of_rent.cost_employee;
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        }); 
+                    });
+
+                    // build the speech to the user
+                    speech="we will look for some option for you in "
+                    +parameterscontextout["distination_city"]
+                    +" in neighborhood" 
+                    +parameterscontextout["distination_Neighborhood"]
+                    +" it should cost arround "
+                    +parameterscontextout["distination_cost_of_rent_general"]
+                    +" flat type will be "
+                    +parameterscontextout["distination_type_of_flat"]
+                    +" that means commute time of "
+                    +parameterscontextout["distination_neighborhood_commute_time"]+" minutes "
+                    +", we will update you regarding the progress."
+
+
 
                 }
                 else{

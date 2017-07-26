@@ -42,6 +42,7 @@ module.exports = {
         "neighborhoods":[
           {
             "name":"Islington",
+            "commute_time":"30",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -62,6 +63,7 @@ module.exports = {
           },
           {
             "name":"Shordith",
+            "commute_time":"40",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
