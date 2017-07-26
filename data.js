@@ -127,63 +127,64 @@ module.exports = {
   }
 ],
  req:{"body":
-                    {
-  "id": "1948e6fc-4e60-40af-b45b-5c7f3eaa5479",
-  "timestamp": "2017-07-25T21:07:35.841Z",
+    {
+  "id": "757bf7c9-fddf-42a1-923b-50df294ae51f",
+  "timestamp": "2017-07-26T20:29:43.761Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "I live in Berlin",
-    "action": "input.city",
+    "resolvedQuery": "yes",
+    "action": "input.city.rent",
     "actionIncomplete": false,
-    "parameters": {
-      "geo-city": "Berlin"
-    },
+    "parameters": {},
     "contexts": [
+      {
+        "name": "rent-yes-followup",
+        "parameters": {},
+        "lifespan": 2
+      },
       {
         "name": "datakeeper",
         "parameters": {
-          "distination_city": "London",
-          "original_city": "Berlin",
-          "original_cost_of_live": "500",
-          "distination_cost_of_live": "800"
+          "original_cost_of_live": "320",
+          "original_city": "Tel Aviv",
+          "distination_cost_of_live": "800",
+          "distination_city": "London"
         },
         "lifespan": 99
       },
       {
         "name": "city-followup",
         "parameters": {
-          "geo-city": "Berlin",
-          "geo-city.original": "Berlin"
+          "geo-city": "Tel Aviv",
+          "geo-city.original": "Tel Aviv"
         },
-        "lifespan": 2
+        "lifespan": 1
       }
     ],
     "metadata": {
-      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
+      "intentId": "75fc8fc5-1b4a-43d4-98e6-493c3965a20f",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "true",
-      "webhookResponseTime": 595,
-      "intentName": "City"
+      "intentName": "Rent - yes"
     },
     "fulfillment": {
-      "speech": "no parameters",
-      "source": "apiai-webhook-sample",
-      "displayText": "no parameters",
+      "speech": "",
       "messages": [
         {
           "type": 0,
-          "speech": "no parameters"
+          "speech": ""
         }
       ]
     },
     "score": 1
   },
   "status": {
-    "code": 200,
-    "errorType": "success"
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
-}
+}               
 }
 };

@@ -85,6 +85,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                
                 // logic for input.city.rent
                 else if (requestBody.result.action=="input.city.rent") {
+                    let neighborhoods=[];
+                    
                     // default values 
                     parameterscontextout["original_cost_of_rent_range"]="Unknown";
                     parameterscontextout["distination_cost_of_rent_range"]="Unknown";
@@ -114,7 +116,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     + " it is about "
                     + parameterscontextout["original_cost_of_rent_range"]
                     +"GBP, here are some popular neighborhoods "
-                    +neighborhoods.split(",")
+                    +neighborhoods.join(',')
                     +", which one you want learn more?";   
                 }
                 // pick neighborhood and cost education

@@ -23,7 +23,7 @@ var webhook_processor=function (req, res) {
         return res.json(response);
 
     } catch (err) {
-        console.error("Can't process request", err);
+            console.error("Can't process request", err);
 
         return res.status(400).json({
             status: {
