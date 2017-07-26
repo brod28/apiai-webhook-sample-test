@@ -2,7 +2,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const data = require('data').rent;
+/*
 const data=[
   {
     "country": "Israel",
@@ -104,7 +105,7 @@ const data=[
     ]
   }
 ];
-
+*/
 const restService = express();
 restService.use(bodyParser.json());
 
@@ -201,9 +202,7 @@ var func=function (req, res) {
                     + parameterscontextout["original_city"]
                     + " it is about "
                     + parameterscontextout["original_cost_of_rent_range"]
-                    +", but it depends what kind of flat do you want?";   
-
-
+                    +"GBP, but it depends what kind of flat do you want?";   
                 }
                 else{
                     speech="no action"
