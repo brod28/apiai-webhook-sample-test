@@ -46,6 +46,13 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                         if (requestBody.result.parameters["geo-city"]) {
                             // set the distination city and the original city
                             parameterscontextout["distination_city"]="London";
+                            data.rent.forEach(function(element) {
+                                element.cities.forEach(function(city) {
+                                    if(parameterscontextout["distination_city"]==city.name){
+                                        SetNeighborhoodEntityValues(requestBody.sessionId,city.neighborhoods);
+                                    }
+                                }); 
+                            });
                             parameterscontextout["original_city"]=requestBody.result.parameters["geo-city"];
                             // default values for original cost of live
                             parameterscontextout["original_cost_of_live"]="Unknown";
@@ -205,4 +212,42 @@ var logic_proccessor=function(requestBody,parameterscontextout){
             contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
         };
 
+}
+
+
+
+var SetNeighborhoodEntityValues=function(sessionId,neighborhoods){
+    var apiai = require("apiai");
+
+    var app = apiai("b266cf849ba2485a96dcdcee069f60d2");
+
+    var sessionId = sessionId;
+
+    var user_entities = [{
+        name: 'Neighborhood',
+        extend: false,
+        entries: [
+        ]
+    }];
+
+    neighborhoods.forEach(function(neighborhood){
+        user_entities[0].entries.push({value:neighborhood.name,synonyms:[neighborhood.name]});
+    })
+    var user_entities_body = {
+        sessionId: sessionId,
+        entities: user_entities
+    };
+
+    var user_entities_request = app.userEntitiesRequest(user_entities_body);
+
+    user_entities_request.on('response', function(response) {
+        console.log('User entities response: ');
+        console.log(JSON.stringify(response, null, 4));
+    });
+
+    user_entities_request.on('error', function(error) {
+        console.log(error);
+    });
+
+    user_entities_request.end();
 }

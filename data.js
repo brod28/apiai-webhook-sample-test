@@ -62,6 +62,27 @@ module.exports = {
             ],
           },
           {
+            "name":"Mayfair",
+            "commute_time":"20",
+            "cost_of_rent":[
+                {
+                    "type_of_flat":"entire flat",
+                    "cost_employee": "3500",
+                    "cost_general": "3600",
+                },
+                {
+                    "type_of_flat":"private room",
+                    "cost_employee": "1800",
+                    "cost_general": "1800",
+                },
+                {
+                    "type_of_flat":"shared room",
+                    "cost_employee": "1500",
+                    "cost_general": "1800",
+                }
+            ],
+          },
+          {
             "name":"Shordith",
             "commute_time":"40",
             "cost_of_rent":[
@@ -128,64 +149,73 @@ module.exports = {
     ]
   }
 ],
- req:{"body":
-    {
-  "id": "17e5586c-b9a9-4782-a627-7382b866de87",
-  "timestamp": "2017-07-26T21:12:59.21Z",
+ req:
+{
+  body:{
+  "id": "55a9a0af-2816-4395-a785-8f7ccdc63277",
+  "timestamp": "2017-07-27T22:31:55.655Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "entire flat",
-    "action": "input.typeofflat",
+    "resolvedQuery": "Berlin",
+    "action": "input.city",
     "actionIncomplete": false,
     "parameters": {
-      "FlatType": "Entire flat"
+      "geo-city": "Berlin"
     },
     "contexts": [
       {
         "name": "datakeeper",
         "parameters": {
-          "distination_cost_of_rent_range": "400-2500",
-          "Neighborhood": "Shordith",
-          "Neighborhood.original": "Shordith",
-          "original_cost_of_live": "320",
-          "original_city": "Tel Aviv",
-          "distination_Neighborhood": "Shordith",
-          "FlatType.original": "entire flat",
-          "FlatType": "Entire flat",
-          "original_cost_of_rent_range": "300-1500",
-          "distination_cost_of_live": "800",
-          "distination_neighborhood_commute_time": "40",
-          "distination_city": "London"
+          "action": "input.city",
+          "distination_city": "London",
+          "original_city": "Berlin",
+          "original_cost_of_live": "500",
+          "distination_cost_of_live": "800"
         },
         "lifespan": 100
+      },
+      {
+        "name": "city-followup",
+        "parameters": {
+          "geo-city": "Berlin",
+          "geo-city.original": "Berlin"
+        },
+        "lifespan": 2
       }
     ],
     "metadata": {
-      "intentId": "b1c2f0c0-3712-479b-9dd5-eae226c19d9d",
+      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
       "webhookUsed": "true",
-      "webhookForSlotFillingUsed": "true",
-      "webhookResponseTime": 131,
-      "intentName": "typeofflat"
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 139,
+      "intentName": "City"
     },
     "fulfillment": {
-      "speech": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress.",
+      "speech": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?",
       "source": "apiai-webhook-sample",
-      "displayText": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress.",
+      "displayText": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?",
       "messages": [
         {
           "type": 0,
-          "speech": "we will look for some option for you in London in neighborhoodShordith it should cost arround undefined flat type will be undefined that means commute time of 40 minutes , we will update you regarding the progress."
+          "speech": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?"
         }
-      ]
+      ],
+      "data": {
+        "action": "input.city",
+        "distination_city": "London",
+        "original_city": "Berlin",
+        "original_cost_of_live": "500",
+        "distination_cost_of_live": "800"
+      }
     },
-    "score": 0.7099999785423279
+    "score": 1
   },
   "status": {
     "code": 200,
     "errorType": "success"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
-}   
+}
 }
 };
