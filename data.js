@@ -152,8 +152,8 @@ module.exports = {
  req:
 {
   body:{
-  "id": "55a9a0af-2816-4395-a785-8f7ccdc63277",
-  "timestamp": "2017-07-27T22:31:55.655Z",
+  "id": "519cf2af-bf27-428e-9542-3a8c1144aabd",
+  "timestamp": "2017-07-27T22:48:03.09Z",
   "lang": "en",
   "result": {
     "source": "agent",
@@ -167,13 +167,21 @@ module.exports = {
       {
         "name": "datakeeper",
         "parameters": {
-          "action": "input.city",
-          "distination_city": "London",
-          "original_city": "Berlin",
+          "Neighborhood.original": "Mayfair",
           "original_cost_of_live": "500",
-          "distination_cost_of_live": "800"
+          "original_city": "Berlin",
+          "distination_cost_of_rent_range": "400-2500",
+          "distination_Neighborhood": "Islington",
+          "geo-city": "Berlin",
+          "original_cost_of_rent_range": "50-600",
+          "action": "input.neighborhood",
+          "geo-city.original": "Berlin",
+          "distination_cost_of_live": "800",
+          "distination_neighborhood_commute_time": "30",
+          "distination_city": "London",
+          "Neighborhood": "Mayfair"
         },
-        "lifespan": 100
+        "lifespan": 96
       },
       {
         "name": "city-followup",
@@ -188,32 +196,23 @@ module.exports = {
       "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 139,
       "intentName": "City"
     },
     "fulfillment": {
-      "speech": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?",
-      "source": "apiai-webhook-sample",
-      "displayText": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?",
+      "speech": "The cost of living in Berlin is #datakeeper.cost_of_live GBP per month",
       "messages": [
         {
           "type": 0,
-          "speech": "cost of living in Berlin is 500GBP per month in compare to cost of live of 800GBP in a place you will move to, London, are you ready continue to rent budget?"
+          "speech": "The cost of living in Berlin is #datakeeper.cost_of_live GBP per month"
         }
-      ],
-      "data": {
-        "action": "input.city",
-        "distination_city": "London",
-        "original_city": "Berlin",
-        "original_cost_of_live": "500",
-        "distination_cost_of_live": "800"
-      }
+      ]
     },
     "score": 1
   },
   "status": {
-    "code": 200,
-    "errorType": "success"
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
 }
