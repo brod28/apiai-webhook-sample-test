@@ -179,17 +179,16 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     });
 
                     // build the speech to the user
-                    speech="we will look for some option for you in "
+                    speech="first part of budget building is done, we will build it based on assumtion you will live in "
                     +parameterscontextout["distination_city"]
                     +" in neighborhood" 
                     +parameterscontextout["distination_Neighborhood"]
-                    +" it should cost arround "
-                    +parameterscontextout["distination_cost_of_rent_general"]
                     +" flat type will be "
                     +parameterscontextout["distination_type_of_flat"]
-                    +" that means commute time of "
-                    +parameterscontextout["distination_neighborhood_commute_time"]+" minutes "
-                    +", we will update you regarding the progress."
+                    +" and the cost is "
+                    +parameterscontextout["distination_cost_of_rent_general"]
+                    +" now we will continue to collect information about your trasportation and food habits to finish "
+                    +" your budget building, please let me know which transport you are going to use? ";
 
 
 
