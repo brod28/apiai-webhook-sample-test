@@ -257,7 +257,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                                     }
                                 }); 
                             });
-                    parameterscontextout["total_cost"]=parameterscontextout["total_food_cost"]+parameterscontextout["Transport_cost"]+parameterscontextout["total_food_cost"];
+                    parameterscontextout["total_cost"]=parameterscontextout["distination_cost_of_rent_general"]+parameterscontextout["Transport_cost"]+parameterscontextout["total_food_cost"];
                     // build the speech to the user
                     speech=" ok, i had few calculation and you food cost per month will be "
                     +parameterscontextout["total_food_cost"]
@@ -281,7 +281,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     +parameterscontextout["total_food_cost"]
                     + "GBP and total cost of "
                     +parameterscontextout["total_cost"]
-                    +" GBP, I hope you are happy with the result, ok i have to run to pick my children so if something is not clear"
+                    +" GBP, I hope you are happy with the result, ok i have to run to pick up my children so if something is not clear"
                     +" please sent me an email to noreplay@benivo.com";
 
                 }
