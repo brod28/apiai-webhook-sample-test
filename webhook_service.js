@@ -265,11 +265,11 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     +parameterscontextout["cost_of_food_for_the_home"]
                     +" GBP, "
                     +parameterscontextout["eatingout_per_week"]
-                    " times a week to eat out "
+                    +" times a week to eat out "
                     +parameterscontextout["eatingout_cost_per_month"]
                     +" GBP and also "
                     +parameterscontextout["lunchouts_per_week"]
-                    " times a week to have lunch out of the office  "
+                    +" times a week to have lunch out of the office  "
                     +parameterscontextout["lunchouts_cost_per_month"]
                     +" GBP. let's summurise all your budget rent is going to be "
                     +parameterscontextout["distination_cost_of_rent_general"]
@@ -282,7 +282,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                     + "GBP and total cost of "
                     +parameterscontextout["total_cost"]
                     +" GBP, I hope you are happy with the result, ok i have to run to pick my children so if something is not clear"
-                    +" please sent me an email to noreplay@benivo.com"
+                    +" please sent me an email to noreplay@benivo.com";
 
                 }
                 else{

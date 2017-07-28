@@ -1,87 +1,111 @@
 {
-  "id": "25143c91-6148-4096-8cea-a0548fb31975",
-  "timestamp": "2017-07-28T18:32:12.91Z",
+  "id": "b8d53917-9eb9-40a3-bc9f-c90752a3ce38",
+  "timestamp": "2017-07-28T19:08:39.863Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "bus",
-    "action": "input.transport",
+    "resolvedQuery": "2",
+    "action": "input.food.lunchout",
     "actionIncomplete": false,
     "parameters": {
-      "Transport": "bus"
+      "number_lunchout": "2"
     },
     "contexts": [
       {
         "name": "datakeeper",
         "parameters": {
           "distination_cost_of_rent_general": "3600",
-          "distination_cost_of_rent_range": "400-2500",
-          "Neighborhood": "Mayfair",
-          "Neighborhood.original": "Mayfair",
-          "original_cost_of_live": "500",
+          "total_cost": 570,
+          "number_eatingout": "3",
+          "cost_of_food_for_the_home": 200,
+          "number_lunchout": "2",
           "original_city": "Berlin",
           "distination_Neighborhood": "Mayfair",
           "distination_type_of_flat": "entire flat",
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat",
+          "lunchouts_cost_per_month": 20,
+          "eatingout_cost_per_month": 60,
           "distination_cost_of_rent_employee": "3500",
           "original_cost_of_rent_range": "50-600",
-          "action": "input.transport",
+          "action": "input.food.lunchout",
+          "total_food_cost": 280,
+          "distination_neighborhood_commute_time": "20",
+          "lunchouts_per_week": "2",
+          "eatingout_per_week": "3",
+          "distination_cost_of_rent_range": "400-2500",
+          "Transport_cost": 10,
+          "Neighborhood": "Mayfair",
+          "Neighborhood.original": "Mayfair",
+          "original_cost_of_live": "500",
+          "number_eatingout.original": "3",
+          "FlatType.original": "entire flat",
+          "FlatType": "entire flat",
+          "number_lunchout.original": "2",
           "Transport": "bus",
           "distination_cost_of_live": "800",
           "Transport.original": "bus",
-          "distination_neighborhood_commute_time": "20",
           "distination_city": "London"
         },
         "lifespan": 100
       },
       {
-        "name": "typeofflat-followup",
+        "name": "food_eatingout-followup",
         "parameters": {
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat",
-          "Transport": "bus",
-          "Transport.original": "bus"
+          "number_eatingout.original": "3",
+          "number_eatingout": "3",
+          "number_lunchout.original": "2",
+          "number_lunchout": "2"
         },
-        "lifespan": 4
+        "lifespan": 1
       }
     ],
     "metadata": {
-      "intentId": "df11f81f-2921-48b1-96c8-2cfc8ae60122",
+      "intentId": "54020e34-ca88-43b0-9415-7000546e0d88",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 129,
-      "intentName": "typeofflat - custom"
+      "webhookResponseTime": 130,
+      "intentName": "food_lunchout"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": " ok, i had few calculation and you food cost per month will be 280 GBP it includes your grocery of 200 GBP, 3",
       "source": "apiai-webhook-sample",
-      "displayText": "",
+      "displayText": " ok, i had few calculation and you food cost per month will be 280 GBP it includes your grocery of 200 GBP, 3",
       "messages": [
         {
           "type": 0,
-          "speech": "great and last thing is your"
+          "speech": " ok, i had few calculation and you food cost per month will be 280 GBP it includes your grocery of 200 GBP, 3"
         }
       ],
       "data": {
         "distination_cost_of_rent_general": "3600",
+        "eatingout_per_week": "3",
         "distination_cost_of_rent_range": "400-2500",
+        "Transport_cost": 10,
+        "number_eatingout": "3",
         "Neighborhood": "Mayfair",
+        "number_lunchout": "2",
         "Neighborhood.original": "Mayfair",
         "original_cost_of_live": "500",
         "original_city": "Berlin",
         "distination_Neighborhood": "Mayfair",
+        "number_eatingout.original": "3",
         "distination_type_of_flat": "entire flat",
         "FlatType.original": "entire flat",
         "FlatType": "entire flat",
         "distination_cost_of_rent_employee": "3500",
         "original_cost_of_rent_range": "50-600",
-        "action": "input.transport",
+        "action": "input.food.lunchout",
+        "number_lunchout.original": "2",
         "Transport": "bus",
         "distination_cost_of_live": "800",
         "Transport.original": "bus",
         "distination_neighborhood_commute_time": "20",
-        "distination_city": "London"
+        "distination_city": "London",
+        "lunchouts_per_week": "2",
+        "cost_of_food_for_the_home": 200,
+        "eatingout_cost_per_month": 60,
+        "lunchouts_cost_per_month": 20,
+        "total_food_cost": 280,
+        "total_cost": 570
       }
     },
     "score": 1
