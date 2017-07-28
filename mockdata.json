@@ -1,0 +1,94 @@
+{
+  "id": "25143c91-6148-4096-8cea-a0548fb31975",
+  "timestamp": "2017-07-28T18:32:12.91Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "bus",
+    "action": "input.transport",
+    "actionIncomplete": false,
+    "parameters": {
+      "Transport": "bus"
+    },
+    "contexts": [
+      {
+        "name": "datakeeper",
+        "parameters": {
+          "distination_cost_of_rent_general": "3600",
+          "distination_cost_of_rent_range": "400-2500",
+          "Neighborhood": "Mayfair",
+          "Neighborhood.original": "Mayfair",
+          "original_cost_of_live": "500",
+          "original_city": "Berlin",
+          "distination_Neighborhood": "Mayfair",
+          "distination_type_of_flat": "entire flat",
+          "FlatType.original": "entire flat",
+          "FlatType": "entire flat",
+          "distination_cost_of_rent_employee": "3500",
+          "original_cost_of_rent_range": "50-600",
+          "action": "input.transport",
+          "Transport": "bus",
+          "distination_cost_of_live": "800",
+          "Transport.original": "bus",
+          "distination_neighborhood_commute_time": "20",
+          "distination_city": "London"
+        },
+        "lifespan": 100
+      },
+      {
+        "name": "typeofflat-followup",
+        "parameters": {
+          "FlatType.original": "entire flat",
+          "FlatType": "entire flat",
+          "Transport": "bus",
+          "Transport.original": "bus"
+        },
+        "lifespan": 4
+      }
+    ],
+    "metadata": {
+      "intentId": "df11f81f-2921-48b1-96c8-2cfc8ae60122",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 129,
+      "intentName": "typeofflat - custom"
+    },
+    "fulfillment": {
+      "speech": "",
+      "source": "apiai-webhook-sample",
+      "displayText": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "great and last thing is your"
+        }
+      ],
+      "data": {
+        "distination_cost_of_rent_general": "3600",
+        "distination_cost_of_rent_range": "400-2500",
+        "Neighborhood": "Mayfair",
+        "Neighborhood.original": "Mayfair",
+        "original_cost_of_live": "500",
+        "original_city": "Berlin",
+        "distination_Neighborhood": "Mayfair",
+        "distination_type_of_flat": "entire flat",
+        "FlatType.original": "entire flat",
+        "FlatType": "entire flat",
+        "distination_cost_of_rent_employee": "3500",
+        "original_cost_of_rent_range": "50-600",
+        "action": "input.transport",
+        "Transport": "bus",
+        "distination_cost_of_live": "800",
+        "Transport.original": "bus",
+        "distination_neighborhood_commute_time": "20",
+        "distination_city": "London"
+      }
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
+}

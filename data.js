@@ -1,5 +1,6 @@
 'use strict';
  
+
 module.exports = {
   rent: [
   {
@@ -39,6 +40,18 @@ module.exports = {
         "name": "London",
         "cost_of_live": "800",
         "cost_of_rent_range": "400-2500",
+        "food_cost":{
+          "monthly_average_cost":200,
+          "cost_of_eating_once_out_a_week_out_per_month":20,
+          "cost_of_not_bringing_food_from_home":10
+        },
+        "transport_cost":{
+          "bus":10,
+          "train":10,
+          "tube":10,
+          "bicycle":10,
+          "bus":10,
+        },
         "neighborhoods":[
           {
             "name":"Islington",
@@ -149,72 +162,7 @@ module.exports = {
     ]
   }
 ],
- req:
-{
-  body:{
-  "id": "519cf2af-bf27-428e-9542-3a8c1144aabd",
-  "timestamp": "2017-07-27T22:48:03.09Z",
-  "lang": "en",
-  "result": {
-    "source": "agent",
-    "resolvedQuery": "Berlin",
-    "action": "input.city",
-    "actionIncomplete": false,
-    "parameters": {
-      "geo-city": "Berlin"
-    },
-    "contexts": [
-      {
-        "name": "datakeeper",
-        "parameters": {
-          "Neighborhood.original": "Mayfair",
-          "original_cost_of_live": "500",
-          "original_city": "Berlin",
-          "distination_cost_of_rent_range": "400-2500",
-          "distination_Neighborhood": "Islington",
-          "geo-city": "Berlin",
-          "original_cost_of_rent_range": "50-600",
-          "action": "input.neighborhood",
-          "geo-city.original": "Berlin",
-          "distination_cost_of_live": "800",
-          "distination_neighborhood_commute_time": "30",
-          "distination_city": "London",
-          "Neighborhood": "Mayfair"
-        },
-        "lifespan": 96
-      },
-      {
-        "name": "city-followup",
-        "parameters": {
-          "geo-city": "Berlin",
-          "geo-city.original": "Berlin"
-        },
-        "lifespan": 2
-      }
-    ],
-    "metadata": {
-      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
-      "webhookUsed": "true",
-      "webhookForSlotFillingUsed": "false",
-      "intentName": "City"
-    },
-    "fulfillment": {
-      "speech": "The cost of living in Berlin is #datakeeper.cost_of_live GBP per month",
-      "messages": [
-        {
-          "type": 0,
-          "speech": "The cost of living in Berlin is #datakeeper.cost_of_live GBP per month"
-        }
-      ]
-    },
-    "score": 1
-  },
-  "status": {
-    "code": 206,
-    "errorType": "partial_content",
-    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
-  },
-  "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
-}
-}
+ req:{
+  body:JSON.parse(require('fs').readFileSync('./mockdata.json', 'utf8'))
+  }
 };

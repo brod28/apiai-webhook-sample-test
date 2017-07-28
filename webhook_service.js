@@ -200,6 +200,91 @@ var logic_proccessor=function(requestBody,parameterscontextout){
 
 
                 }
+                else if (requestBody.result.action=="input.transport") {
+                    let food_cost_monthly_average_cost=0;
+                    if (requestBody.result.parameters) {
+                        if (requestBody.result.parameters["Transport"]) {
+
+                            parameterscontextout["Transport"]=requestBody.result.parameters["Transport"];
+                            parameterscontextout["Transport_cost"]="unknown";
+                            data.rent.forEach(function(element) {
+                                element.cities.forEach(function(city) {
+                                    if(parameterscontextout["distination_city"]==city.name){
+                                        food_cost_monthly_average_cost=city.food_cost.monthly_average_cost;
+                                        if(city.transport_cost[parameterscontextout["Transport"]]){
+                                            parameterscontextout["Transport_cost"]=city.transport_cost[parameterscontextout["Transport"]];
+                                        }
+                                    }
+                                }); 
+                            });
+
+                            // build the speech to the user
+                            speech="cost of " 
+                            +parameterscontextout["Transport"]
+                            +" is "
+                            +parameterscontextout["Transport_cost"]
+                            +"GBP per month in "
+                            +parameterscontextout["distination_city"]
+                            +"GBP, last thing is food cost, if you are not going out and bring food from home " 
+                            +"for your lunch and not going out, it will be "
+                            +food_cost_monthly_average_cost 
+                            +"but you do go out, how many times are you going out in average a week?";   
+                        }
+                        else{
+                             console.log("no geo-city");
+                        }
+                    }
+                    else{
+                             console.log("no parameters");
+                    }
+                }
+                else if (requestBody.result.action=="input.food.eatingout") {
+                    parameterscontextout["eatingout_per_week"]=requestBody.result.parameters["number_eatingout"];
+                    // build the speech to the user
+                    speech=" and how many times a week you will not bring food from home?"
+                }
+                else if (requestBody.result.action=="input.food.lunchout") {
+                    parameterscontextout["lunchouts_per_week"]=requestBody.result.parameters["number_lunchout"];
+                    let food_cost;
+                     data.rent.forEach(function(element) {
+                                element.cities.forEach(function(city) {
+                                    if(parameterscontextout["distination_city"]==city.name){
+                                        food_cost=city.food_cost;
+                                        parameterscontextout["cost_of_food_for_the_home"]=food_cost.monthly_average_cost;
+                                        parameterscontextout["eatingout_cost_per_month"]=parameterscontextout["eatingout_per_week"]*food_cost.cost_of_eating_once_out_a_week_out_per_month;
+                                        parameterscontextout["lunchouts_cost_per_month"]=parameterscontextout["lunchouts_per_week"]*food_cost.cost_of_not_bringing_food_from_home;
+                                        parameterscontextout["total_food_cost"]=parameterscontextout["cost_of_food_for_the_home"]+parameterscontextout["eatingout_cost_per_month"]+parameterscontextout["lunchouts_cost_per_month"]
+                                    }
+                                }); 
+                            });
+                    parameterscontextout["total_cost"]=parameterscontextout["total_food_cost"]+parameterscontextout["Transport_cost"]+parameterscontextout["total_food_cost"];
+                    // build the speech to the user
+                    speech=" ok, i had few calculation and you food cost per month will be "
+                    +parameterscontextout["total_food_cost"]
+                    +" GBP it includes your grocery of "
+                    +parameterscontextout["cost_of_food_for_the_home"]
+                    +" GBP, "
+                    +parameterscontextout["eatingout_per_week"]
+                    " times a week to eat out "
+                    +parameterscontextout["eatingout_cost_per_month"]
+                    +" GBP and also "
+                    +parameterscontextout["lunchouts_per_week"]
+                    " times a week to have lunch out of the office  "
+                    +parameterscontextout["lunchouts_cost_per_month"]
+                    +" GBP. let's summurise all your budget rent is going to be "
+                    +parameterscontextout["distination_cost_of_rent_general"]
+                    +" GBP and transportation "
+                    +parameterscontextout["Transport_cost"]
+                    +" GBP because you decided to use "
+                    +parameterscontextout["Transport"]
+                    + "GBP and food cost of "
+                    +parameterscontextout["total_food_cost"]
+                    + "GBP and total cost of "
+                    +parameterscontextout["total_cost"]
+                    +" GBP, I hope you are happy with the result, ok i have to run to pick my children so if something is not clear"
+                    +" please sent me an email to noreplay@benivo.com"
+
+                }
                 else{
                     console.log("no action");
                 }            
