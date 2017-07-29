@@ -1,60 +1,120 @@
 {
-  "id": "c7517b83-270e-479d-aeda-32c4d2f18906",
-  "timestamp": "2017-07-29T03:21:52.831Z",
+  "id": "ba89e9bc-c0ef-4c29-b8d4-6729078fd09d",
+  "timestamp": "2017-07-29T04:01:33.454Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "Berlin",
-    "action": "input.city",
+    "resolvedQuery": "Mayfair",
+    "action": "input.neighborhood",
     "actionIncomplete": false,
     "parameters": {
-      "geo-city": "Berlin"
+      "distination_neighborhood": "Mayfair"
     },
     "contexts": [
       {
+        "name": "rent-yes-followup",
+        "parameters": {
+          "distination_neighborhood": "Mayfair",
+          "distination_neighborhood.original": "Mayfair"
+        },
+        "lifespan": 2
+      },
+      {
         "name": "datakeeper",
         "parameters": {
-          "action": "input.city",
-          "geo-city.original": "Berlin",
-          "geo-city": "Berlin",
+          "distination_cost_of_rent_general": "3600",
+          "from_city_cost_of_live": "500",
+          "from_city.original": "Berlin",
+          "total_cost": 3890,
+          "cost_of_grocery": 200,
+          "flattype": "entire flat",
+          "food_cost_monthly_average_cost": 200,
+          "number_of_lunchout_per_week": "2",
+          "distination_type_of_flat": "entire flat",
+          "eatingout_cost_per_month": 60,
+          "distination_cost_of_rent_employee": "3500",
+          "action": "input.neighborhood",
+          "total_food_cost": 280,
+          "flattype.original": "entire flat",
+          "number_of_goingout_per_week.original": "3",
+          "from_city_cost_of_rent_range": "50-600",
+          "distination_list_of_neighborhoods": "Islington,Mayfair,Shordith",
+          "number_of_goingout_per_week": "3",
+          "distination_neighborhood": "Mayfair",
+          "from_city": "Berlin",
+          "distination_city_cost_of_rent_range": "400-2500",
+          "distination_neighborhood.original": "Mayfair",
+          "cost_of_rent_per_neighborhood": "",
+          "transport_type": "bus",
+          "number_of_lunchout_per_week.original": "2",
+          "lunchout_cost_per_month": 20,
+          "transport_type.original": "bus",
+          "transport_cost": 10,
+          "distination_cost_of_live": "800",
           "distination_city": "London"
         },
         "lifespan": 100
       },
       {
-        "name": "city-followup",
+        "name": "neighborhood-followup",
         "parameters": {
-          "geo-city": "Berlin",
-          "geo-city.original": "Berlin"
+          "distination_neighborhood": "Mayfair",
+          "distination_neighborhood.original": "Mayfair"
         },
         "lifespan": 2
       }
     ],
     "metadata": {
-      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
+      "intentId": "3d98cb07-82ea-47d8-b7aa-525fb9f56e3e",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 590,
-      "intentName": "City"
+      "webhookResponseTime": 132,
+      "intentName": "Neighborhood"
     },
     "fulfillment": {
-      "speech": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   ",
+      "speech": "you choosed Mayfair with commute time of  minutes , pick another neighborhood or if you are happy with this one pick type of flat you want   ",
       "source": "apiai-webhook-sample",
-      "displayText": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   ",
+      "displayText": "you choosed Mayfair with commute time of  minutes , pick another neighborhood or if you are happy with this one pick type of flat you want   ",
       "messages": [
         {
           "type": 0,
-          "speech": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   "
+          "speech": "you choosed Mayfair with commute time of  minutes , pick another neighborhood or if you are happy with this one pick type of flat you want   "
         }
       ],
       "data": {
-        "geo-city": "Berlin",
-        "action": "input.city",
-        "geo-city.original": "Berlin",
+        "distination_cost_of_rent_general": "3600",
+        "from_city_cost_of_live": "500",
+        "from_city.original": "Berlin",
+        "total_cost": 3890,
+        "cost_of_grocery": 200,
+        "flattype": "entire flat",
+        "food_cost_monthly_average_cost": 200,
+        "number_of_lunchout_per_week": "2",
+        "distination_type_of_flat": "entire flat",
+        "eatingout_cost_per_month": 60,
+        "distination_cost_of_rent_employee": "3500",
+        "action": "input.neighborhood",
+        "total_food_cost": 280,
+        "flattype.original": "entire flat",
+        "number_of_goingout_per_week.original": "3",
+        "from_city_cost_of_rent_range": "50-600",
+        "distination_list_of_neighborhoods": "Islington,Mayfair,Shordith",
+        "number_of_goingout_per_week": "3",
+        "distination_neighborhood": "Mayfair",
+        "from_city": "Berlin",
+        "distination_city_cost_of_rent_range": "400-2500",
+        "distination_neighborhood.original": "Mayfair",
+        "cost_of_rent_per_neighborhood": "",
+        "transport_type": "bus",
+        "number_of_lunchout_per_week.original": "2",
+        "lunchout_cost_per_month": 20,
+        "transport_type.original": "bus",
+        "transport_cost": 10,
+        "distination_cost_of_live": "800",
         "distination_city": "London"
       }
     },
-    "score": 1
+    "score": 0.7525124154138236
   },
   "status": {
     "code": 200,
