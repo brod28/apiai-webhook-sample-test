@@ -1,84 +1,64 @@
 {
-  "id": "0d871419-e32d-4a1b-8473-957fa6a31be5",
-  "timestamp": "2017-07-29T02:42:02.888Z",
+  "id": "c7517b83-270e-479d-aeda-32c4d2f18906",
+  "timestamp": "2017-07-29T03:21:52.831Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "4",
-    "action": "input.food.eatingout",
+    "resolvedQuery": "Berlin",
+    "action": "input.city",
     "actionIncomplete": false,
     "parameters": {
-      "number_eatingout": "4"
+      "geo-city": "Berlin"
     },
     "contexts": [
       {
         "name": "datakeeper",
         "parameters": {
-          "distination_cost_of_rent_general": "3600",
-          "distination_cost_of_rent_range": "400-2500",
-          "number_eatingout": "4",
-          "Transport_cost": 10,
-          "food_cost_monthly_average_cost": 200,
-          "Neighborhood": "Mayfair",
-          "Neighborhood.original": "Mayfair",
-          "original_cost_of_live": "500",
-          "original_city": "Berlin",
-          "distination_Neighborhood": "Mayfair",
-          "number_eatingout.original": "4",
-          "distination_type_of_flat": "entire flat",
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat",
-          "distination_cost_of_rent_employee": "3500",
-          "original_cost_of_rent_range": "50-600",
-          "action": "input.transport",
-          "Transport": "bus",
-          "distination_cost_of_live": "800",
-          "Transport.original": "bus",
-          "distination_neighborhood_commute_time": "20",
+          "action": "input.city",
+          "geo-city.original": "Berlin",
+          "geo-city": "Berlin",
           "distination_city": "London"
         },
-        "lifespan": 99
+        "lifespan": 100
       },
       {
-        "name": "transport-followup",
+        "name": "city-followup",
         "parameters": {
-          "number_eatingout.original": "4",
-          "number_eatingout": "4",
-          "Transport": "bus",
-          "Transport.original": "bus"
-        },
-        "lifespan": 1
-      },
-      {
-        "name": "food_eatingout-followup",
-        "parameters": {
-          "number_eatingout.original": "4",
-          "number_eatingout": "4"
+          "geo-city": "Berlin",
+          "geo-city.original": "Berlin"
         },
         "lifespan": 2
       }
     ],
     "metadata": {
-      "intentId": "a4dcdeca-8fab-4b00-b49c-469f5fd95e40",
+      "intentId": "f9d1898b-53eb-4603-bd26-eb54ee2f1e6d",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "food_eatingout"
+      "webhookResponseTime": 590,
+      "intentName": "City"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   ",
+      "source": "apiai-webhook-sample",
+      "displayText": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   ",
       "messages": [
         {
           "type": 0,
-          "speech": ""
+          "speech": "Cost of living in  is  GBP per month in compare to cost of live of \nGBP in a place you will move to, London ,are you ready continue to rent budget?   "
         }
-      ]
+      ],
+      "data": {
+        "geo-city": "Berlin",
+        "action": "input.city",
+        "geo-city.original": "Berlin",
+        "distination_city": "London"
+      }
     },
-    "score": 0.5099999904632568
+    "score": 1
   },
   "status": {
-    "code": 206,
-    "errorType": "partial_content",
-    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
+    "code": 200,
+    "errorType": "success"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
 }
