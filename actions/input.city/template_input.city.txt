@@ -1,0 +1,2 @@
+cost of living in {original_city is {original_cost_of_live} GBP per month in compare to cost of live of {distination_cost_of_live}
+GBP in a place you will move to, {distination_city} ,are you ready continue to rent budget?   

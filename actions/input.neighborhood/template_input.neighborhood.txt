@@ -1,0 +1,1 @@
+you choosed {distination_Neighborhood) with commute time of {distination_neighborhood_commute_time minutes {cost_of_rent_per_neighborhood}, pick another neighborhood or if you are happy with this one pick type of flat you want   
