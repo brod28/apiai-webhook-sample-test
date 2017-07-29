@@ -1,0 +1,13 @@
+Great, 
+We have a clear picture regarding your budget, let's start with the food, your total price is going to be {total_food_cost} GBP
+
+It includes your grocery that are going to be around {cost_of_food_for_the_home} GBP then you plan to go out around {eatingout_per_week} times 
+a week and it's monthly cost will be {eatingout_cost_per_month} GBP and last thing we will add to food budget is your lunchs that you don't bring from home, in average it
+will happen {lunchouts_per_week} times a week and going to add additional {lunchouts_cost_per_month} GBP to your monthly budget. 
+
+And now all your budget together, it will include rent cost of {distination_cost_of_rent_general} GBP, transportation of {Transport_cost} GBP, remid you you planned to use {Transport}
+and last parameter is the food that is going to cost you {total_food_cost} GBP so your final monthly budget in {distination_city} will be {total_food_cost} GBP.
+
+I have to run to pick up my children if you have more questions please send me email to noreplay@benivo.com i will try to response you in 12 hours.
+
+Have a great day !!!

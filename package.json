@@ -12,6 +12,8 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.13.4",
-    "apiai": "^4.0.3"
+    "apiai": "^4.0.3",
+    "json-query": "^2.2.2",
+    "string-template":"1.0.0"  
   }
 }

@@ -1,5 +1,6 @@
 'use strict';
 const data = require('./data.js');
+var format = require("string-template")
 
 module.exports = {
 
@@ -165,127 +166,68 @@ var logic_proccessor=function(requestBody,parameterscontextout){
                 }
                 // picked type of flat
                 else if (requestBody.result.action=="input.typeofflat") {
-                    var cost_of_rent_per_neighborhood="";
-                    // find the rent cost per flat type
-                    data.rent.forEach(function(element) {
-                        element.cities.forEach(function(city) {
-                            if(parameterscontextout["distination_city"]==city.name){
-                                city.neighborhoods.forEach(function(neighborhood) {
-                                    if(neighborhood.name==parameterscontextout["distination_Neighborhood"]){
-                                        neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
-                                            if(cost_of_rent.type_of_flat==requestBody.result.parameters["FlatType"]){
-                                                parameterscontextout["distination_type_of_flat"]=cost_of_rent.type_of_flat;
-                                                parameterscontextout["distination_cost_of_rent_general"]=cost_of_rent.cost_general;
-                                                parameterscontextout["distination_cost_of_rent_employee"]=cost_of_rent.cost_employee;
-                                            }
-                                        });
-                                    }
-                                });
-                            }
-                        }); 
-                    });
+                    try
+                    {
+                        parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
+                    }
+                    catch(err){
+                        console.log(err);
+                    }
 
+                    let template=getTemplate(requestBody.result.action);
                     // build the speech to the user
-                    speech="first part of budget building is done, we will build it based on assumtion you will live in "
-                    +parameterscontextout["distination_city"]
-                    +" in neighborhood" 
-                    +parameterscontextout["distination_Neighborhood"]
-                    +" flat type will be "
-                    +parameterscontextout["distination_type_of_flat"]
-                    +" and the cost is "
-                    +parameterscontextout["distination_cost_of_rent_general"]
-                    +" now we will continue to collect information about your trasportation and food habits to finish "
-                    +" your budget building, please let me know which transport you are going to use? ";
+                    speech = getSpeech(template, parameterscontextout);
 
 
 
                 }
                 else if (requestBody.result.action=="input.transport") {
-                    let food_cost_monthly_average_cost=0;
-                    if (requestBody.result.parameters) {
-                        if (requestBody.result.parameters["Transport"]) {
 
-                            parameterscontextout["Transport"]=requestBody.result.parameters["Transport"];
-                            parameterscontextout["Transport_cost"]="unknown";
-                            data.rent.forEach(function(element) {
-                                element.cities.forEach(function(city) {
-                                    if(parameterscontextout["distination_city"]==city.name){
-                                        food_cost_monthly_average_cost=city.food_cost.monthly_average_cost;
-                                        if(city.transport_cost[parameterscontextout["Transport"]]){
-                                            parameterscontextout["Transport_cost"]=city.transport_cost[parameterscontextout["Transport"]];
-                                        }
-                                    }
-                                }); 
-                            });
-
-                            // build the speech to the user
-                            speech="cost of " 
-                            +parameterscontextout["Transport"]
-                            +" is "
-                            +parameterscontextout["Transport_cost"]
-                            +"GBP per month in "
-                            +parameterscontextout["distination_city"]
-                            +"GBP, last thing is food cost, if you are not going out and bring food from home " 
-                            +"for your lunch and not going out, it will be "
-                            +food_cost_monthly_average_cost 
-                            +"but you do go out, how many times are you going out in average a week?";   
-                        }
-                        else{
-                             console.log("no geo-city");
-                        }
+                    try
+                    {
+                        parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
                     }
-                    else{
-                             console.log("no parameters");
+                    catch(err){
+                        console.log(err);
                     }
+                    
+                    let template=getTemplate(requestBody.result.action);
+                    // build the speech to the user
+                    speech = getSpeech(template, parameterscontextout);
+                    
                 }
                 else if (requestBody.result.action=="input.food.eatingout") {
-                    parameterscontextout["eatingout_per_week"]=requestBody.result.parameters["number_eatingout"];
+                    try
+                    {
+                        parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
+                    }
+                    catch(err){
+                        console.log(err);
+                    }
+
+                    // get the template
+                    let template=getTemplate(requestBody.result.action);
                     // build the speech to the user
-                    speech=" and how many times a week you will not bring food from home?"
+                    speech = getSpeech(template, parameterscontextout);
+
                 }
                 else if (requestBody.result.action=="input.food.lunchout") {
-                    parameterscontextout["lunchouts_per_week"]=requestBody.result.parameters["number_lunchout"];
-                    let food_cost;
-                     data.rent.forEach(function(element) {
-                                element.cities.forEach(function(city) {
-                                    if(parameterscontextout["distination_city"]==city.name){
-                                        food_cost=city.food_cost;
-                                        parameterscontextout["cost_of_food_for_the_home"]=food_cost.monthly_average_cost;
-                                        parameterscontextout["eatingout_cost_per_month"]=parameterscontextout["eatingout_per_week"]*food_cost.cost_of_eating_once_out_a_week_out_per_month;
-                                        parameterscontextout["lunchouts_cost_per_month"]=parameterscontextout["lunchouts_per_week"]*food_cost.cost_of_not_bringing_food_from_home;
-                                        parameterscontextout["total_food_cost"]=parameterscontextout["cost_of_food_for_the_home"]+parameterscontextout["eatingout_cost_per_month"]+parameterscontextout["lunchouts_cost_per_month"]
-                                    }
-                                }); 
-                            });
-                    parameterscontextout["total_cost"]=parseInt(parameterscontextout["distination_cost_of_rent_general"])+parameterscontextout["Transport_cost"]+parameterscontextout["total_food_cost"];
+                    try
+                    {
+                        parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
+                    }
+                    catch(err){
+                        console.log(err);
+                    }
+                    
+ 
+                    let template=getTemplate(requestBody.result.action);
                     // build the speech to the user
-                    speech=" ok, i had few calculation and you food cost per month will be "
-                    +parameterscontextout["total_food_cost"]
-                    +" GBP it includes your grocery of "
-                    +parameterscontextout["cost_of_food_for_the_home"]
-                    +" GBP, "
-                    +parameterscontextout["eatingout_per_week"]
-                    +" times a week to eat out "
-                    +parameterscontextout["eatingout_cost_per_month"]
-                    +" GBP and also "
-                    +parameterscontextout["lunchouts_per_week"]
-                    +" times a week to have lunch out of the office  "
-                    +parameterscontextout["lunchouts_cost_per_month"]
-                    +" GBP. let's summurise all your budget rent is going to be "
-                    +parameterscontextout["distination_cost_of_rent_general"]
-                    +" GBP and transportation "
-                    +parameterscontextout["Transport_cost"]
-                    +" GBP because you decided to use "
-                    +parameterscontextout["Transport"]
-                    + "GBP and food cost of "
-                    +parameterscontextout["total_food_cost"]
-                    + "GBP and total cost of "
-                    +parameterscontextout["total_cost"]
-                    +" GBP, I hope you are happy with the result, ok i have to run to pick up my children so if something is not clear"
-                    +" please sent me an email to noreplay@benivo.com";
+                    speech = getSpeech(template, parameterscontextout);
 
                 }
                 else{
+                    // check what is the resonse to api ai we need to send to use its message
                     console.log("no action");
                 }            
 
@@ -299,6 +241,21 @@ var logic_proccessor=function(requestBody,parameterscontextout){
 
 }
 
+
+var getSpeech=function(template, parameterscontextout){
+    let speech=format(template, parameterscontextout);
+    return speech;
+}
+
+var getContext=function(action,parameterscontextout,requestBody){
+    let context=require('./actions/'+action+'/context_'+action).processor(parameterscontextout,requestBody);
+    return context;
+}
+
+var getTemplate=function(action){
+    let template=require('fs').readFileSync('./actions/'+action+'/template_'+action+'.txt', 'utf8');
+    return template;
+}
 
 
 var SetNeighborhoodEntityValues=function(sessionId,neighborhoods){

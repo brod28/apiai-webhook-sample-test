@@ -1,0 +1,7 @@
+Cost of using {Transport} is {Transport_cost} GBP per month in {distination_city}. 
+
+Let's figuire out the last component of your budget, 
+if you are not going out and always bring lunch  from home so you budget should be around {food_cost_monthly_average_cost} 
+but you do go out and not always remember bring food from home, 
+
+How many times are you going out in average a week?
