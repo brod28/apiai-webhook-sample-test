@@ -12,8 +12,8 @@ module.exports = {
     let cost_of_rent=jsonQuery(
         'rent[**]'
         +'.cities[name='+parameterscontextout["distination_city"]+' ]'
-        +'.neighborhoods[name='+parameterscontextout["distination_Neighborhood"]+' ]'
-        +'.cost_of_rent[type_of_flat='+parameterscontextout["FlatType"]+' ]'
+        +'.neighborhoods[name='+parameterscontextout["distination_neighborhood"]+' ]'
+        +'.cost_of_rent[type_of_flat='+parameterscontextout["flattype"]+' ]'
         , {
         data: data
     }).value;

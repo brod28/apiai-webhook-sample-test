@@ -1,1 +1,1 @@
-average rent in {distination_city}is {distination_cost_of_rent_range} GBP per month and your city now {original_city} it is about {original_cost_of_rent_range} GBP, here are some popular neighborhoods {distination_list_of_neighborhoods}which one you want learn more?
+average rent in {distination_city}is {distination_city_cost_of_rent_range} GBP per month and your city now {from_city} it is about {from_city_cost_of_rent_range} GBP, here are some popular neighborhoods {distination_list_of_neighborhoods}which one you want learn more?
