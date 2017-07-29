@@ -1,116 +1,84 @@
 {
-  "id": "80047261-7a7e-476c-9ad0-2a56f4a8553e",
-  "timestamp": "2017-07-28T22:13:59.04Z",
+  "id": "0d871419-e32d-4a1b-8473-957fa6a31be5",
+  "timestamp": "2017-07-29T02:42:02.888Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "entire flat",
-    "action": "input.typeofflat",
+    "resolvedQuery": "4",
+    "action": "input.food.eatingout",
     "actionIncomplete": false,
     "parameters": {
-      "FlatType": "entire flat"
+      "number_eatingout": "4"
     },
     "contexts": [
-      {
-        "name": "rent-yes-followup",
-        "parameters": {
-          "Neighborhood.original": "Mayfair",
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat",
-          "Neighborhood": "Mayfair"
-        },
-        "lifespan": 1
-      },
       {
         "name": "datakeeper",
         "parameters": {
           "distination_cost_of_rent_general": "3600",
           "distination_cost_of_rent_range": "400-2500",
+          "number_eatingout": "4",
+          "Transport_cost": 10,
+          "food_cost_monthly_average_cost": 200,
           "Neighborhood": "Mayfair",
           "Neighborhood.original": "Mayfair",
           "original_cost_of_live": "500",
           "original_city": "Berlin",
           "distination_Neighborhood": "Mayfair",
+          "number_eatingout.original": "4",
           "distination_type_of_flat": "entire flat",
           "FlatType.original": "entire flat",
           "FlatType": "entire flat",
-          "original_cost_of_rent_range": "50-600",
-          "action": "input.typeofflat",
           "distination_cost_of_rent_employee": "3500",
+          "original_cost_of_rent_range": "50-600",
+          "action": "input.transport",
+          "Transport": "bus",
           "distination_cost_of_live": "800",
+          "Transport.original": "bus",
           "distination_neighborhood_commute_time": "20",
           "distination_city": "London"
         },
-        "lifespan": 100
+        "lifespan": 99
       },
       {
-        "name": "neighborhood-followup",
+        "name": "transport-followup",
         "parameters": {
-          "Neighborhood.original": "Mayfair",
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat",
-          "Neighborhood": "Mayfair"
+          "number_eatingout.original": "4",
+          "number_eatingout": "4",
+          "Transport": "bus",
+          "Transport.original": "bus"
         },
         "lifespan": 1
       },
       {
-        "name": "typeofflat-followup-2",
+        "name": "food_eatingout-followup",
         "parameters": {
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat"
-        },
-        "lifespan": 2
-      },
-      {
-        "name": "typeofflat-followup",
-        "parameters": {
-          "FlatType.original": "entire flat",
-          "FlatType": "entire flat"
+          "number_eatingout.original": "4",
+          "number_eatingout": "4"
         },
         "lifespan": 2
       }
     ],
     "metadata": {
-      "intentId": "b1c2f0c0-3712-479b-9dd5-eae226c19d9d",
+      "intentId": "a4dcdeca-8fab-4b00-b49c-469f5fd95e40",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 133,
-      "intentName": "typeofflat"
+      "intentName": "food_eatingout"
     },
     "fulfillment": {
-      "speech": "first part of budget building is done, we will build it based on assumtion you will live in London in neighborhoodMayfair flat type will be entire flat and the cost is 3600 now we will continue to collect information about your trasportation and food habits to finish  your budget building, please let me know which transport you are going to use? ",
-      "source": "apiai-webhook-sample",
-      "displayText": "first part of budget building is done, we will build it based on assumtion you will live in London in neighborhoodMayfair flat type will be entire flat and the cost is 3600 now we will continue to collect information about your trasportation and food habits to finish  your budget building, please let me know which transport you are going to use? ",
+      "speech": "",
       "messages": [
         {
           "type": 0,
-          "speech": "first part of budget building is done, we will build it based on assumtion you will live in London in neighborhoodMayfair flat type will be entire flat and the cost is 3600 now we will continue to collect information about your trasportation and food habits to finish  your budget building, please let me know which transport you are going to use? "
+          "speech": ""
         }
-      ],
-      "data": {
-        "Neighborhood.original": "Mayfair",
-        "original_cost_of_live": "500",
-        "original_city": "Berlin",
-        "distination_cost_of_rent_range": "400-2500",
-        "distination_Neighborhood": "Mayfair",
-        "FlatType.original": "entire flat",
-        "FlatType": "entire flat",
-        "original_cost_of_rent_range": "50-600",
-        "action": "input.typeofflat",
-        "distination_cost_of_live": "800",
-        "distination_neighborhood_commute_time": "20",
-        "distination_city": "London",
-        "Neighborhood": "Mayfair",
-        "distination_type_of_flat": "entire flat",
-        "distination_cost_of_rent_general": "3600",
-        "distination_cost_of_rent_employee": "3500"
-      }
+      ]
     },
-    "score": 1
+    "score": 0.5099999904632568
   },
   "status": {
-    "code": 200,
-    "errorType": "success"
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
   },
   "sessionId": "c85c5688-8c15-469d-8ab6-af54e8cc7327"
 }
