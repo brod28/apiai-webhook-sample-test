@@ -10,10 +10,16 @@ response:function (requestBody) {
     
     // build the context based on contextout
     var parameterscontextout={};
+    for(var key in requestBody.result.parameters) {
+        parameterscontextout[key] = requestBody.result.parameters[key];
+    }
+
     if (requestBody.result.contexts) {
         requestBody.result.contexts.forEach(function(context) {
             if(context.name=="datakeeper"){
-                parameterscontextout=context.parameters;
+                for(var key in context.parameters) {
+                    parameterscontextout[key] = context.parameters[key];
+                }
             }
         });
     }
