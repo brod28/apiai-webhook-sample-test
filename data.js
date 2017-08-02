@@ -10,6 +10,8 @@ module.exports = {
       {
         "name": "Tel Aviv",
         "cost_of_live": "320",
+        "cost_of_room": "230",
+        "cost_of_1_bed_room": "470",
         "cost_of_rent_range": "300-1500",
         "cost_of_rent":[
             {
@@ -40,6 +42,8 @@ module.exports = {
         "name": "London",
         "cost_of_live": "800",
         "cost_of_rent_range": "400-2500",
+        "cost_of_room": "40",
+        "cost_of_1_bed_room": "900",
         "food_cost":{
           "monthly_average_cost":200,
           "cost_of_eating_once_out_a_week_out_per_month":20,
@@ -56,6 +60,7 @@ module.exports = {
           {
             "name":"Islington",
             "commute_time":"30",
+            "percent_of_people_from_your_company":"5",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -77,6 +82,7 @@ module.exports = {
           {
             "name":"Mayfair",
             "commute_time":"20",
+            "percent_of_people_from_your_company":"15",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -98,6 +104,7 @@ module.exports = {
           {
             "name":"Shordith",
             "commute_time":"40",
+            "percent_of_people_from_your_company":"80",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -120,11 +127,15 @@ module.exports = {
       },
       {
         "name": "Liverpool",
-        "cost_of_live": "400"
+        "cost_of_live": "400",
+        "cost_of_room": "40",
+        "cost_of_1_bed_room": "90",
       },
       {
         "name": "Oxford",
-        "cost_of_live": "500"
+        "cost_of_live": "500",
+        "cost_of_room": "40",
+        "cost_of_1_bed_room": "90",
       }
     ]
   },
@@ -135,6 +146,8 @@ module.exports = {
       {
         "name": "Berlin",
         "cost_of_live": "500",
+        "cost_of_room": "200",
+        "cost_of_1_bed_room": "400",
         "cost_of_rent_range": "50-600",
         "cost_of_rent":[
             {

@@ -1,1 +1,5 @@
-average rent in {distination_city}is {distination_city_cost_of_rent_range} GBP per month and your city now {from_city} it is about {from_city_cost_of_rent_range} GBP, here are some popular neighborhoods {distination_list_of_neighborhoods}which one you want learn more?
+The average rent for a room in {distination_city} is £{distination_city_cost_of_1_bed_room} (€TBD) compared to {from_city_cost_of_1_bed_room} (€TBD) in {city_from}. 
+$$$
+The average rent for a 1 bedroom flat in {distination_city} is £{distination_city_cost_of_room} (€TBD) compared to {from_city_cost_of_room} (€TBD) in {city_from}. 
+$$$
+But lets take a closer look. The neighbourhoods most popular with your {your_company} colleagues are {distination_list_of_neighborhoods}. Which would you like to learn more about?

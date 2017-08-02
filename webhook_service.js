@@ -42,6 +42,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
 
     // set the distination city and the original city
     parameterscontextout["distination_city"]="London";
+    parameterscontextout["your_company"]="Goppa";
+    
 
 
     // if neccesary excute business rules and store results in context 
