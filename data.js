@@ -67,16 +67,19 @@ module.exports = {
                     "type_of_flat":"entire flat",
                     "cost_employee": "2500",
                     "cost_general": "2600",
+                    "percent_of_people_from_your_company":"50",
                 },
                 {
                     "type_of_flat":"private room",
                     "cost_employee": "800",
                     "cost_general": "800",
+                    "percent_of_people_from_your_company":"25",
                 },
                 {
                     "type_of_flat":"shared room",
                     "cost_employee": "500",
                     "cost_general": "400",
+                    "percent_of_people_from_your_company":"25",
                 }
             ],
           },
@@ -90,16 +93,19 @@ module.exports = {
                     "type_of_flat":"entire flat",
                     "cost_employee": "3500",
                     "cost_general": "3600",
+                    "percent_of_people_from_your_company":"30",
                 },
                 {
                     "type_of_flat":"private room",
                     "cost_employee": "1800",
                     "cost_general": "1800",
+                    "percent_of_people_from_your_company":"20",
                 },
                 {
                     "type_of_flat":"shared room",
                     "cost_employee": "1500",
                     "cost_general": "1800",
+                    "percent_of_people_from_your_company":"50",
                 }
             ],
           },
@@ -113,16 +119,20 @@ module.exports = {
                     "type_of_flat":"entire flat",
                     "cost_employee": "1500",
                     "cost_general": "1600",
+                    "percent_of_people_from_your_company":"50",
+
                 },
                 {
                     "type_of_flat":"private room",
                     "cost_employee": "600",
                     "cost_general": "500",
+                    "percent_of_people_from_your_company":"50",
                 },
                 {
                     "type_of_flat":"shared room",
                     "cost_employee": "400",
                     "cost_general": "500",
+                    "percent_of_people_from_your_company":"0",
                 }
             ],
           }

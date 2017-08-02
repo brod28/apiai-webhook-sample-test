@@ -1,1 +1,7 @@
-first part of budget building is done, we will build it based on assumtion you will live in {distination_city} in neighborhood {distination_neighborhood} flat type will be {distination_type_of_flat} and the cost is {distination_cost_of_rent_general} GBP now we will continue to collect information about your trasportation and food habits to finish your budget building, please let me know which transport you are going to use?
+That's cool. So you chose to live in {distination_neighborhood} and you would like to live in a  {distination_type_of_flat}. You are looking to spend from {distination_cost_of_rent_general} in rent every month. {distination_peers_living_in_neighbourhood}% of peer are living in {distination_neighborhood}, and out of them {distination_peers_living_in_type_of_flat}% live in {distination_type_of_flat}, so what you chose it's a pretty popular option... 
+$$$
+In terms of rent expenses you are spending TBD than your colleagues
+$$$
+You can read more about living in {distination_neighborhood} and how much your colleagues rented for, it is opened on the left side of the screen. 
+$$$
+Now let's talk about your budget for transportation. Please let us know how you would prefer going to the office?

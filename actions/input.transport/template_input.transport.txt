@@ -1,7 +1,7 @@
-Cost of using {transport_type} is {transport_cost} GBP per month in {distination_city}. 
-
-Let's figuire out the last component of your budget, 
-if you are not going out and always bring lunch  from home so you budget should be around {food_cost_monthly_average_cost} 
-but you do go out and not always remember bring food from home, 
-
-How many times are you going out in average a week?
+Nice, {transport_type} is very healthy and {distination_neighborhood} is only about TBD to the {your_company} offices. 
+$$$
+Also, of all people living in {distination_neighborhood}, TBD% are also going to the office {transport_type}
+$$$
+This means you are going to add {food_cost_monthly_average_cost} to your budget. I have added it up for you. 
+$$$
+Let's finish this monthly budget calculation by letting you know how much you will spend in groceries. But first, answer to this: How often do you like to cook at home, {user_name}? Everyday, three times a week, or rarely?
