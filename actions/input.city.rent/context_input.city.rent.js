@@ -34,7 +34,7 @@ module.exports = {
 
         parameterscontextout["distination_list_of_neighborhoods"]="";
         neighborhoods.forEach(function(element) {
-            parameterscontextout["distination_list_of_neighborhoods"]+=" "+element.name+" ( "+element.percent_of_people+" % of employees lived there) ";
+            parameterscontextout["distination_list_of_neighborhoods"]+=" "+element.name+" ("+element.percent_of_people+"% of employees lived there) ";
         });
         return parameterscontextout; 
     } 
