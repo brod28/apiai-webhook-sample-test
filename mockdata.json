@@ -1,96 +1,128 @@
 {
-  "id": "ff86a5b3-c1a1-4cfb-a03d-4d4d1aeb3bf1",
-  "timestamp": "2017-08-02T13:06:47.923Z",
+  "id": "f7df97b6-b84a-4275-bf8a-357db6b24d4a",
+  "timestamp": "2017-08-02T13:37:53.047Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "Mayfair",
-    "action": "input.neighborhood",
+    "resolvedQuery": "1",
+    "action": "input.food.eatingout",
     "actionIncomplete": false,
     "parameters": {
-      "distination_neighborhood": "Mayfair"
+      "number_of_goingout_per_week": "1"
     },
     "contexts": [
       {
-        "name": "rent-yes-followup",
-        "parameters": {
-          "distination_neighborhood": "Mayfair",
-          "distination_neighborhood.original": "Mayfair"
-        },
-        "lifespan": 2
-      },
-      {
         "name": "datakeeper",
         "parameters": {
-          "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
-          "from_city_cost_of_live": "500",
-          "distination_city_cost_of_1_bed_room": "900",
+          "distination_cost_of_rent_general": 2600,
+          "from_city_cost_of_live": 500,
+          "from_city.original": "berlin",
           "user_name": "John",
-          "distination_neighborhood": "Mayfair",
-          "from_city": "Berlin",
-          "distination_city_cost_of_room": "40",
-          "distination_city_cost_of_rent_range": "400-2500",
-          "distination_neighborhood.original": "Mayfair",
+          "flattype": "entire flat",
+          "food_cost_monthly_average_cost": 200,
           "your_company": "Goppa",
-          "from_city_cost_of_room": "200",
-          "cost_of_rent_per_neighborhood": " in entire flat average price 3600 employee average price 3500 in private room average price 1800 employee average price 1800 in shared room average price 1800 employee average price 1500",
-          "from_city_cost_of_1_bed_room": "400",
-          "action": "input.neighborhood",
-          "distination_cost_of_live": "800",
-          "distination_neighborhood_commute_time": "20",
+          "distination_type_of_flat": "entire flat",
+          "neighborhood_why_to_love_it": "it's one of the most trendy areas in London. it has the nicer people in the town",
+          "distination_cost_of_rent_employee": 2500,
+          "action": "input.food.eatingout",
+          "flattype.original": "1 bedroom flat",
+          "number_of_goingout_per_week.original": "1",
+          "distination_neighborhood_commute_time": 30,
           "from_city_cost_of_rent_range": "50-600",
+          "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
+          "distination_peers_living_in_type_of_flat": 50,
+          "number_of_goingout_per_week": "1",
+          "distination_city_cost_of_1_bed_room": 900,
+          "distination_neighborhood": "Islington",
+          "from_city": "Berlin",
+          "distination_city_cost_of_room": 40,
+          "distination_city_cost_of_rent_range": "400-2500",
+          "distination_neighborhood.original": "Islington",
+          "from_city_cost_of_room": 200,
+          "cost_of_rent_per_neighborhood": " in entire flat average price 2600 employee average price 2500 in private room average price 800 employee average price 800 in shared room average price 400 employee average price 500",
+          "transport_type": "bus",
+          "distination_peers_living_in_neighbourhood": 5,
+          "from_city_cost_of_1_bed_room": 400,
+          "transport_type.original": "bus",
+          "transport_cost": 10,
+          "distination_cost_of_live": 800,
           "distination_city": "London"
         },
         "lifespan": 100
       },
       {
-        "name": "neighborhood-followup",
+        "name": "transport-followup",
         "parameters": {
-          "distination_neighborhood": "Mayfair",
-          "distination_neighborhood.original": "Mayfair"
+          "number_of_goingout_per_week": "1",
+          "transport_type": "bus",
+          "transport_type.original": "bus",
+          "number_of_goingout_per_week.original": "1"
+        },
+        "lifespan": 1
+      },
+      {
+        "name": "food_eatingout-followup",
+        "parameters": {
+          "number_of_goingout_per_week": "1",
+          "number_of_goingout_per_week.original": "1"
         },
         "lifespan": 2
       }
     ],
     "metadata": {
-      "intentId": "3d98cb07-82ea-47d8-b7aa-525fb9f56e3e",
+      "intentId": "a4dcdeca-8fab-4b00-b49c-469f5fd95e40",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 145,
-      "intentName": "Neighborhood"
+      "webhookResponseTime": 139,
+      "intentName": "food_eatingout"
     },
     "fulfillment": {
-      "speech": "Cool! Mayfair is popular because . \n$$$\nSo, are you looking to live in a 1 bedroom flat or a room in a shared house? ",
+      "speech": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Islington, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani.",
       "source": "apiai-webhook-sample",
-      "displayText": "Cool! Mayfair is popular because . \n$$$\nSo, are you looking to live in a 1 bedroom flat or a room in a shared house? ",
+      "displayText": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Islington, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani.",
       "messages": [
         {
           "type": 0,
-          "speech": "Cool! Mayfair is popular because . \n$$$\nSo, are you looking to live in a 1 bedroom flat or a room in a shared house? "
+          "speech": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Islington, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani."
         }
       ],
       "data": {
-        "distination_neighborhood": "Mayfair",
-        "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
-        "from_city_cost_of_live": "500",
-        "distination_city_cost_of_1_bed_room": "900",
+        "number_of_goingout_per_week": "1",
+        "distination_cost_of_rent_general": 2600,
+        "from_city_cost_of_live": 500,
+        "from_city.original": "berlin",
         "user_name": "John",
-        "from_city": "Berlin",
-        "distination_city_cost_of_room": "40",
-        "distination_city_cost_of_rent_range": "400-2500",
-        "distination_neighborhood.original": "Mayfair",
+        "flattype": "entire flat",
+        "food_cost_monthly_average_cost": 200,
         "your_company": "Goppa",
-        "from_city_cost_of_room": "200",
-        "from_city_cost_of_1_bed_room": "400",
-        "action": "input.neighborhood",
-        "distination_cost_of_live": "800",
+        "distination_type_of_flat": "entire flat",
+        "neighborhood_why_to_love_it": "it's one of the most trendy areas in London. it has the nicer people in the town",
+        "distination_cost_of_rent_employee": 2500,
+        "action": "input.food.eatingout",
+        "flattype.original": "1 bedroom flat",
+        "number_of_goingout_per_week.original": "1",
+        "distination_neighborhood_commute_time": 30,
         "from_city_cost_of_rent_range": "50-600",
-        "distination_city": "London",
-        "cost_of_rent_per_neighborhood": " in entire flat average price 3600 employee average price 3500 in private room average price 1800 employee average price 1800 in shared room average price 1800 employee average price 1500",
-        "distination_neighborhood_commute_time": "20"
+        "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
+        "distination_peers_living_in_type_of_flat": 50,
+        "distination_city_cost_of_1_bed_room": 900,
+        "distination_neighborhood": "Islington",
+        "from_city": "Berlin",
+        "distination_city_cost_of_room": 40,
+        "distination_city_cost_of_rent_range": "400-2500",
+        "distination_neighborhood.original": "Islington",
+        "from_city_cost_of_room": 200,
+        "cost_of_rent_per_neighborhood": " in entire flat average price 2600 employee average price 2500 in private room average price 800 employee average price 800 in shared room average price 400 employee average price 500",
+        "transport_type": "bus",
+        "distination_peers_living_in_neighbourhood": 5,
+        "from_city_cost_of_1_bed_room": 400,
+        "transport_type.original": "bus",
+        "transport_cost": 10,
+        "distination_cost_of_live": 800,
+        "distination_city": "London"
       }
     },
-    "score": 0.7525124154138236
+    "score": 0.5
   },
   "status": {
     "code": 200,

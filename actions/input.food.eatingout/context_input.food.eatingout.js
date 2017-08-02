@@ -11,7 +11,7 @@ module.exports = {
         data: data
     }).value.food_cost;
 
-    let city_from_food_cost=jsonQuery('rent[**].cities[name='+parameterscontextout["city_from"]+' ]', {
+    let city_from_food_cost=jsonQuery('rent[**].cities[name='+parameterscontextout["from_city"]+' ]', {
         data: data
     }).value.food_cost;
 
