@@ -13,6 +13,12 @@ module.exports = {
         "cost_of_room": "230",
         "cost_of_1_bed_room": "470",
         "cost_of_rent_range": "300-1500",
+        "food_cost":{
+          "monthly_average_cost":100,
+          "cost_of_eating_once_out_a_week_out_per_month":10,
+          "cost_of_not_bringing_food_from_home":17
+        },
+
         "cost_of_rent":[
             {
                 "type_of_flat":"entire flat",
@@ -162,6 +168,12 @@ module.exports = {
         "cost_of_room": "200",
         "cost_of_1_bed_room": "400",
         "cost_of_rent_range": "50-600",
+        "food_cost":{
+          "monthly_average_cost":150,
+          "cost_of_eating_once_out_a_week_out_per_month":30,
+          "cost_of_not_bringing_food_from_home":7
+        },
+
         "cost_of_rent":[
             {
                 "type_of_flat":"entire flat",

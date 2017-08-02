@@ -1,1 +1,9 @@
-and how many times a week you will not bring food from home?
+I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £{distination_city_cost_of_grocery} (€TBD), compared to about £{city_from_cost_of_grocery} (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}
+$$$
+"So {user_name}, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! 
+$$$
+Living in a {distination_type_of_flat} in {distination_neighborhood}, commuting by {transport_type}, and cooking at home {cooking_at_home}, you can expect to pay {{RENT BUDGET}} + {{ACCOMMODATION BUDGET }} + {{TRANSPORTATION BUDGET}} -  that's about {{TOTAL MONTHLY BUDGET}}. On average, your {{COMPANY}} colleagues pay about £{{PAID BY PEERS IN POUNDS}} (€{{PAID BY PEERS IN LOCAL CURRENCY}}) so you are {{% BELOW OR ABOVE}} below/above the average of {{COMPANY}} employees. 
+$$$
+Don't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} 
+$$$
+Thanks for chatting with me, Lani.
