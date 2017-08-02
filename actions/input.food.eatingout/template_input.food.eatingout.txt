@@ -2,7 +2,7 @@ I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop eve
 $$$
 So {user_name}, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! 
 $$$
-Living in a {distination_type_of_flat} in {distination_neighborhood}, commuting by {transport_type}, and cooking at home {cooking_at_home}, you can expect to pay {distination_cost_of_rent_general} + {cooking_at_home} + {transport_cost} -  that's about {total_cost}. On average, your {your_company} colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of {your_company} employees. 
+Living in a {distination_type_of_flat} in {distination_neighborhood}, commuting by {transport_type}, and cooking at home {cooking_at_home} times a week, you can expect to pay {distination_cost_of_rent_general} + {total_food_cost} + {transport_cost} -  that's about {total_cost}. On average, your {your_company} colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of {your_company} employees. 
 $$$
 Don't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} 
 $$$
