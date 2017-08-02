@@ -1,1 +1,3 @@
-you choosed {distination_neighborhood} with commute time of {distination_neighborhood_commute_time} minutes {cost_of_rent_per_neighborhood}, pick another neighborhood or if you are happy with this one pick type of flat you want   
+Cool! {distination_neighborhood} is popular because {distination_city_why_to_love_it}. 
+$$$
+So, are you looking to live in a 1 bedroom flat or a room in a shared house? 

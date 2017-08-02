@@ -61,6 +61,7 @@ module.exports = {
             "name":"Islington",
             "commute_time":"30",
             "percent_of_people_from_your_company":"5",
+            "why_to_love_it":"it's one of the most trendy areas in London. it has the nicer people in the town",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -83,6 +84,7 @@ module.exports = {
             "name":"Mayfair",
             "commute_time":"20",
             "percent_of_people_from_your_company":"15",
+            "why_to_love_it":"it's one of the most trendy areas in London. it has the best restaurants in London",
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",
@@ -105,6 +107,7 @@ module.exports = {
             "name":"Shordith",
             "commute_time":"40",
             "percent_of_people_from_your_company":"80",
+            "why_to_love_it":"it's one of the most trendy areas in London. it's home to the Shoreditch market and had some great street art",            
             "cost_of_rent":[
                 {
                     "type_of_flat":"entire flat",

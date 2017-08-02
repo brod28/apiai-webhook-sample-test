@@ -13,6 +13,7 @@ module.exports = {
                         element.cities.forEach(function(city) {
                             if(parameterscontextout["distination_city"]==city.name){
                                 city.neighborhoods.forEach(function(neighborhood) {
+                                    parameterscontextout["distination_city_why_to_love_it"]=city.why_to_love_it;
                                     if(neighborhood.name==requestBody.result.parameters["distination_neighborhood"]){
                                         parameterscontextout["distination_neighborhood_commute_time"]=neighborhood.commute_time;
                                         neighborhood.cost_of_rent.forEach(function(cost_of_rent) {
