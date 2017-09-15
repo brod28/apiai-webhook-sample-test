@@ -1,132 +1,34 @@
 {
-  "id": "820292f5-8d3d-44cb-8049-33da17a72346",
-  "timestamp": "2017-08-02T13:47:26.639Z",
+  "id": "53c8e89c-687b-4dd9-8ac8-8f5de5068aa0",
+  "timestamp": "2017-09-15T19:28:44.431Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "1",
-    "action": "input.food.eatingout",
+    "resolvedQuery": "hi",
+    "action": "ben.input.welcome",
     "actionIncomplete": false,
-    "parameters": {
-      "number_of_goingout_per_week": "1"
-    },
-    "contexts": [
-      {
-        "name": "datakeeper",
-        "parameters": {
-          "distination_cost_of_rent_general": 2600,
-          "from_city_cost_of_live": 500,
-          "from_city.original": "BErlin",
-          "user_name": "John",
-          "flattype": "Private room",
-          "food_cost_monthly_average_cost": 200,
-          "your_company": "Goppa",
-          "distination_type_of_flat": "entire flat",
-          "neighborhood_why_to_love_it": "it's one of the most trendy areas in London. it's home to the Shoreditch market and had some great street art",
-          "distination_cost_of_rent_employee": 2500,
-          "action": "input.food.eatingout",
-          "flattype.original": "room in a shared house",
-          "number_of_goingout_per_week.original": "1",
-          "distination_neighborhood_commute_time": 40,
-          "from_city_cost_of_rent_range": "50-600",
-          "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
-          "distination_peers_living_in_type_of_flat": 50,
-          "number_of_goingout_per_week": "1",
-          "distination_city_cost_of_1_bed_room": 900,
-          "distination_neighborhood": "Shordith",
-          "from_city": "Berlin",
-          "distination_city_cost_of_room": 40,
-          "distination_city_cost_of_rent_range": "400-2500",
-          "distination_neighborhood.original": "Shordith",
-          "from_city_cost_of_room": 200,
-          "cost_of_rent_per_neighborhood": " in entire flat average price 1600 employee average price 1500 in private room average price 500 employee average price 600 in shared room average price 500 employee average price 400",
-          "transport_type": "bus",
-          "distination_peers_living_in_neighbourhood": 80,
-          "from_city_cost_of_1_bed_room": 400,
-          "transport_type.original": "bus",
-          "transport_cost": 10,
-          "distination_cost_of_live": 800,
-          "distination_city": "London"
-        },
-        "lifespan": 100
-      },
-      {
-        "name": "transport-followup",
-        "parameters": {
-          "number_of_goingout_per_week": "1",
-          "transport_type": "bus",
-          "transport_type.original": "bus",
-          "number_of_goingout_per_week.original": "1"
-        },
-        "lifespan": 1
-      },
-      {
-        "name": "food_eatingout-followup",
-        "parameters": {
-          "number_of_goingout_per_week": "1",
-          "number_of_goingout_per_week.original": "1"
-        },
-        "lifespan": 2
-      }
-    ],
+    "parameters": {},
+    "contexts": [],
     "metadata": {
-      "intentId": "a4dcdeca-8fab-4b00-b49c-469f5fd95e40",
-      "webhookUsed": "true",
+      "intentId": "e6f4d04c-739c-4fcd-a3e8-16dec3d86e40",
+      "webhookUsed": "false",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 137,
-      "intentName": "food_eatingout"
+      "intentName": "Default Welcome Intent"
     },
     "fulfillment": {
-      "speech": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Shordith, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani.",
-      "source": "apiai-webhook-sample",
-      "displayText": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Shordith, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani.",
+      "speech": "Greetings!",
       "messages": [
         {
           "type": 0,
-          "speech": "I ALWAYS COOK: Cooking at home is the cheapest option in London. If you shop everyweek for 1 person, you should expect to pay about £ (€TBD), compared to about £ (€TBD) . TBD% of your Stark colleagues spent around the same money as you in groceries per month, as Stark provides a variety of free lunches. I opened an article for you on the left side where you can read more about food costs in {{{{London in the Cost of living article- LINK}}}}\n$$$\nSo John, now we have worked out an overview of where you'd like to live, how you want to commute, and how much you cook, we can add up your total minium budget! \n$$$\nLiving in a entire flat in Shordith, commuting by bus, and cooking at home , you can expect to pay 2600 +  + 10 -  that's about . On average, your Goppa colleagues pay about £TBD (€TBD) so you are %TBD below/above the average of Goppa employees. \n$$$\nDon't forget to check out the money saving tips at the bottom of the {{Cost of living article - LINK}} \n$$$\nThanks for chatting with me, Lani."
+          "speech": "Greetings!"
         }
-      ],
-      "data": {
-        "number_of_goingout_per_week": "1",
-        "distination_cost_of_rent_general": 2600,
-        "from_city_cost_of_live": 500,
-        "from_city.original": "BErlin",
-        "user_name": "John",
-        "flattype": "Private room",
-        "food_cost_monthly_average_cost": 200,
-        "your_company": "Goppa",
-        "distination_type_of_flat": "entire flat",
-        "neighborhood_why_to_love_it": "it's one of the most trendy areas in London. it's home to the Shoreditch market and had some great street art",
-        "distination_cost_of_rent_employee": 2500,
-        "action": "input.food.eatingout",
-        "flattype.original": "room in a shared house",
-        "number_of_goingout_per_week.original": "1",
-        "distination_neighborhood_commute_time": 40,
-        "from_city_cost_of_rent_range": "50-600",
-        "distination_list_of_neighborhoods": " Islington (5% of employees lived there)  Mayfair (15% of employees lived there)  Shordith (80% of employees lived there) ",
-        "distination_peers_living_in_type_of_flat": 50,
-        "distination_city_cost_of_1_bed_room": 900,
-        "distination_neighborhood": "Shordith",
-        "from_city": "Berlin",
-        "distination_city_cost_of_room": 40,
-        "distination_city_cost_of_rent_range": "400-2500",
-        "distination_neighborhood.original": "Shordith",
-        "from_city_cost_of_room": 200,
-        "cost_of_rent_per_neighborhood": " in entire flat average price 1600 employee average price 1500 in private room average price 500 employee average price 600 in shared room average price 500 employee average price 400",
-        "transport_type": "bus",
-        "distination_peers_living_in_neighbourhood": 80,
-        "from_city_cost_of_1_bed_room": 400,
-        "transport_type.original": "bus",
-        "transport_cost": 10,
-        "distination_cost_of_live": 800,
-        "distination_city": "London"
-      }
+      ]
     },
-    "score": 0.5
+    "score": 1
   },
   "status": {
     "code": 200,
     "errorType": "success"
   },
-  "sessionId": "faba92ea-b47e-4d18-83e3-c7b0cde89613"
+  "sessionId": "3f795883-ae9f-48fd-bca8-ba3e25de02af"
 }
