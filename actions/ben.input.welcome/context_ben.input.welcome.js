@@ -9,8 +9,7 @@ module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
     // default values for original cost of live
-    parameterscontextout["from_city_cost_of_live"]="Unknown";
-    parameterscontextout["from_city_cost_of_live"]="Unknown";
+    parameterscontextout["fire_event"]="original_city_question";
     
 
     return parameterscontextout; 

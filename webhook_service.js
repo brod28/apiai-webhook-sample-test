@@ -39,6 +39,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     
     //store the action in context
     parameterscontextout["action"]=requestBody.result.action;
+    parameterscontextout["fire_event"]="";
 
     // set the distination city and the original city
     parameterscontextout["distination_city"]="London";
