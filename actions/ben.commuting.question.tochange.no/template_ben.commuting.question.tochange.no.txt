@@ -1,1 +1,1 @@
-great you will commute with {TransportationType.original}
+great you will commute with {TransportationType}

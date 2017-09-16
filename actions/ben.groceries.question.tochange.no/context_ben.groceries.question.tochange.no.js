@@ -11,7 +11,7 @@ module.exports = {
 
 
     
-    parameterscontextout["fire_event"]="groceries_question";
+    parameterscontextout["fire_event"]="next";
 
 
     return parameterscontextout; 
