@@ -9,7 +9,7 @@ module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
     // after go to next intent
-    parameterscontextout["fire_event"]="original_city_question";
+    parameterscontextout["fire_event"]="next";
     
 
     return parameterscontextout; 
