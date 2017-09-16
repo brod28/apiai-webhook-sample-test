@@ -11,6 +11,8 @@ module.exports = {
 
 
     
+    parameterscontextout["fire_event"]="groceries_question";
+
 
     return parameterscontextout; 
   } 
