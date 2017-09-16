@@ -8,8 +8,10 @@ const apiai = require("apiai");
 module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
+    parameterscontextout["fire_event"]="groceries_question";
+
+
     
-    parameterscontextout["fire_event"]="next";
 
     return parameterscontextout; 
   } 
