@@ -1,34 +1,125 @@
 {
-  "id": "53c8e89c-687b-4dd9-8ac8-8f5de5068aa0",
-  "timestamp": "2017-09-15T19:28:44.431Z",
+  "id": "d0a79bfa-6076-4859-9790-d90fb0ec4f15",
+  "timestamp": "2017-09-16T07:54:09.913Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "hi",
-    "action": "ben.input.welcome",
+    "resolvedQuery": "I want to learn about Moorgate",
+    "action": "",
     "actionIncomplete": false,
-    "parameters": {},
-    "contexts": [],
+    "parameters": {
+      "learn_about": [
+        "Moorgate"
+      ]
+    },
+    "contexts": [
+      {
+        "name": "benrentareaquestion-followup",
+        "parameters": {
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ]
+        },
+        "lifespan": 1
+      },
+      {
+        "name": "datakeeper",
+        "parameters": {
+          "original_city": "Berlin",
+          "your_company": "Goppa",
+          "fire_event": "",
+          "learn_about.original": "Moorgate",
+          "user_name": "John",
+          "action": "ben.rent.area.question",
+          "learn_about": [
+            "Moorgate"
+          ],
+          "original_city.original": "Berlin",
+          "distination_city": "London"
+        },
+        "lifespan": 99
+      },
+      {
+        "name": "required_transportation",
+        "parameters": {
+          "original_city": "Berlin",
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ],
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 93
+      },
+      {
+        "name": "required_grocery",
+        "parameters": {
+          "original_city": "Berlin",
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ],
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 93
+      },
+      {
+        "name": "not_required_city_from",
+        "parameters": {
+          "original_city": "Berlin",
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ],
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 95
+      },
+      {
+        "name": "not_required_rent_area",
+        "parameters": {
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ]
+        },
+        "lifespan": 99
+      },
+      {
+        "name": "required_rent_flattype",
+        "parameters": {
+          "original_city": "Berlin",
+          "learn_about.original": "Moorgate",
+          "learn_about": [
+            "Moorgate"
+          ],
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 93
+      }
+    ],
     "metadata": {
-      "intentId": "e6f4d04c-739c-4fcd-a3e8-16dec3d86e40",
-      "webhookUsed": "false",
+      "intentId": "33f47294-f231-43f9-a61b-932fd527895b",
+      "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "Default Welcome Intent"
+      "intentName": "ben.rent.area.pick"
     },
     "fulfillment": {
-      "speech": "Greetings!",
+      "speech": "",
       "messages": [
         {
           "type": 0,
-          "speech": "Greetings!"
+          "speech": ""
         }
       ]
     },
     "score": 1
   },
   "status": {
-    "code": 200,
-    "errorType": "success"
+    "code": 206,
+    "errorType": "partial_content",
+    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
   },
   "sessionId": "3f795883-ae9f-48fd-bca8-ba3e25de02af"
 }
