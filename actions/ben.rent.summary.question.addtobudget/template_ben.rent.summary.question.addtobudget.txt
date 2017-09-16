@@ -1,1 +1,1 @@
-cool!!! we assume for the budget that you want to live in {flattype_to_stay.original} at {area_to_stay.original}
+cool!!! we assume for the budget that you want to live in {flattype_to_stay.original} at {area_to_stay.original} 
