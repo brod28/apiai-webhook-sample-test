@@ -9,7 +9,7 @@ module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
     
-    parameterscontextout["fire_event"]="next";
+    parameterscontextout["fire_event"]="rent_summary_enterance";
 
     return parameterscontextout; 
   } 
