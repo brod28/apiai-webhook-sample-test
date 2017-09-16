@@ -9,7 +9,7 @@ module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
     // after go to next intent
-    parameterscontextout["go_next"]=true;
+    parameterscontextout["fire_event"]="next";
 
     
 
