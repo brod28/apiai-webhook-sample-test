@@ -8,8 +8,6 @@ const apiai = require("apiai");
 module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
-    // after go to next intent
-    parameterscontextout["go_next"]=true;
 
 
     

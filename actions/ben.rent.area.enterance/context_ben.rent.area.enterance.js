@@ -8,11 +8,13 @@ const apiai = require("apiai");
 module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
-    // after go to next intent
-    parameterscontextout["fire_event"]="next";
+    parameterscontextout["fire_event"]="rent_area_question";
+
+
     
 
     return parameterscontextout; 
   } 
 }
+
 
