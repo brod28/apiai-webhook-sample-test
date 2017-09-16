@@ -1,5 +1,0 @@
-{from_city}, what a nice place! Just for you to know, on average people pay £{from_city_cost_of_live} (€TBD) a month for food, travel, and rent. 
-$$$
-In comparison, people in {distination_city} pay £{distination_cost_of_live} (€TBD) a month. 
-$$$
-OK, let's start building your monthly budget for {distination_city}. Normally the most expensive bit is rent, what if we start by that?

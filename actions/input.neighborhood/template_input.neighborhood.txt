@@ -1,3 +1,0 @@
-Cool! {distination_neighborhood} is popular because {neighborhood_why_to_love_it}. 
-$$$
-So, are you looking to live in a 1 bedroom flat or a room in a shared house? 
