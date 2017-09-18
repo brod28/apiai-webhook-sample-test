@@ -37,15 +37,19 @@ var webhook_processor=function (req, res) {
 
 
 
-restService.post('/hook',function(req,res) {
-    return webhook_processor(req,res) 
-});
-
 restService.get('/hook',function(req,res) {
     var req = data.req; 
     return webhook_processor(req,res);
 
 });
+
+
+restService.post('/hook',function(req,res) {
+    return webhook_processor(req,res) 
+});
+
+
+
 
 
 restService.listen((process.env.PORT || 5000), function () {
