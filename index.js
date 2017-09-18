@@ -19,8 +19,8 @@ var webhook_processor=function (req, res) {
     try {
 
         return res.json( {
-            speech: "the weather" +requestBody.result.parameters["Weather"],
-            displayText: "the weather"+requestBody.result.parameters["Weather"],
+            speech: "the weather" +req.body.result.parameters["Weather"],
+            displayText: "the weather"+req.body.result.parameters["Weather"],
             data:[{test:"test"}],
             source: 'apiai-webhook-sample',
             contextOut: []
