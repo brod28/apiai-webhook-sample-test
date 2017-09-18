@@ -1,116 +1,51 @@
 {
-  "id": "d0a79bfa-6076-4859-9790-d90fb0ec4f15",
-  "timestamp": "2017-09-16T07:54:09.913Z",
+  "id": "e41ecb4c-72d4-4a1b-b10b-301559ee4cdd",
+  "timestamp": "2017-09-18T21:39:21.822Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "I want to learn about Moorgate",
-    "action": "",
+    "resolvedQuery": "cold",
+    "action": "weather.question.cold",
     "actionIncomplete": false,
     "parameters": {
-      "learn_about": [
-        "Moorgate"
+      "Weather": [
+        "cold"
       ]
     },
     "contexts": [
       {
-        "name": "benrentareaquestion-followup",
+        "name": "weatherquestion-followup",
         "parameters": {
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ]
+          "Weather": [
+            "cold"
+          ],
+          "Weather.original": "cold"
         },
         "lifespan": 1
       },
       {
-        "name": "datakeeper",
+        "name": "second_question",
         "parameters": {
-          "original_city": "Berlin",
-          "your_company": "Goppa",
-          "fire_event": "",
-          "learn_about.original": "Moorgate",
-          "user_name": "John",
-          "action": "ben.rent.area.question",
-          "learn_about": [
-            "Moorgate"
+          "Weather": [
+            "cold"
           ],
-          "original_city.original": "Berlin",
-          "distination_city": "London"
+          "Weather.original": "cold"
         },
-        "lifespan": 99
-      },
-      {
-        "name": "required_transportation",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
-      },
-      {
-        "name": "required_grocery",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
-      },
-      {
-        "name": "not_required_city_from",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 95
-      },
-      {
-        "name": "not_required_rent_area",
-        "parameters": {
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ]
-        },
-        "lifespan": 99
-      },
-      {
-        "name": "required_rent_flattype",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
+        "lifespan": 5
       }
     ],
     "metadata": {
-      "intentId": "33f47294-f231-43f9-a61b-932fd527895b",
+      "intentId": "1806b5a3-8857-460f-b2c5-0cf3c210f427",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "ben.rent.area.pick"
+      "intentName": "weather.question.answer"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": "i wrote it down, do you like causual or formal?",
       "messages": [
         {
           "type": 0,
-          "speech": ""
+          "speech": "i wrote it down, do you like causual  or formal?"
         }
       ]
     },
@@ -119,7 +54,7 @@
   "status": {
     "code": 206,
     "errorType": "partial_content",
-    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
+    "errorDetails": "Webhook call failed. Error: 404 Not Found"
   },
   "sessionId": "3f795883-ae9f-48fd-bca8-ba3e25de02af"
 }

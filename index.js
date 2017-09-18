@@ -17,12 +17,13 @@ var webhook_processor=function (req, res) {
     console.log('hook request');
 
     try {
-        return {
+        return res.json( {
             speech: "we are here",
             displayText: "we are here",
-//            data:parameterscontextout,
+           // data:parameterscontextout,
             source: 'apiai-webhook-sample',
-        };
+            contextOut: []
+        });
 
         var response=webhook_service.response(req.body);
         console.log(response.speech);
