@@ -20,7 +20,7 @@ var webhook_processor=function (req, res) {
         return res.json( {
             speech: "we are here",
             displayText: "we are here",
-           // data:parameterscontextout,
+            data:[],
             source: 'apiai-webhook-sample',
             contextOut: []
         });
