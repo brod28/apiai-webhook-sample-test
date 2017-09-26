@@ -12,8 +12,6 @@ module.exports = {
     parameterscontextout["fire_event"]="summary_bye";
     
 
-    
-
     return parameterscontextout; 
   } 
 }
