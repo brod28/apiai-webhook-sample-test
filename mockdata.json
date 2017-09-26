@@ -5,7 +5,7 @@
   "result": {
     "source": "agent",
     "resolvedQuery": "c_welcome",
-    "action": "ben.groceries.question.tochange",
+    "action": "ben.original_city.pick.ready",
     "actionIncomplete": false,
     "parameters": {},
     "contexts": [
