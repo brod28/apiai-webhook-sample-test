@@ -39,7 +39,10 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     
     //store the action in context
     parameterscontextout["action"]=requestBody.result.action;
+    //set next event to fire to empty (not to fire)
     parameterscontextout["fire_event"]="";
+    //set next infographics to no infographics
+    parameterscontextout["Infographics"]={};
 
     // set the distination city and the original city
     parameterscontextout["distination_city"]="London";
