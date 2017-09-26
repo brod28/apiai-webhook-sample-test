@@ -10,7 +10,7 @@ module.exports = {
 
     let not_required_grocery=jsonQuery('result.contexts.[*].name', {
         data: requestBody
-    }).value.indexOf("not_required_grocery");
+    }).value.indexOf("not_required_groceries");
     
     
     if(not_required_grocery!=-1 && not_required_transportation!=-1){
