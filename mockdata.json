@@ -1,125 +1,86 @@
 {
-  "id": "d0a79bfa-6076-4859-9790-d90fb0ec4f15",
-  "timestamp": "2017-09-16T07:54:09.913Z",
+  "id": "553e988b-bbfe-428b-9eb0-5953bae37a9e",
+  "timestamp": "2017-09-26T12:29:02.152Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "I want to learn about Moorgate",
-    "action": "",
+    "resolvedQuery": "c_welcome",
+    "action": "ben.groceries.question.tochange",
     "actionIncomplete": false,
-    "parameters": {
-      "learn_about": [
-        "Moorgate"
-      ]
-    },
+    "parameters": {},
     "contexts": [
       {
-        "name": "benrentareaquestion-followup",
-        "parameters": {
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ]
-        },
-        "lifespan": 1
+        "name": "required_city_from",
+        "parameters": {},
+        "lifespan": 100
       },
       {
         "name": "datakeeper",
         "parameters": {
-          "original_city": "Berlin",
+          "action": "ben.input.welcome",
+          "fire_event": "next",
+          "distination_city": "London",
           "your_company": "Goppa",
-          "fire_event": "",
-          "learn_about.original": "Moorgate",
-          "user_name": "John",
-          "action": "ben.rent.area.question",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin",
-          "distination_city": "London"
+          "user_name": "John"
         },
-        "lifespan": 99
+        "lifespan": 100
+      },
+      {
+        "name": "required_rent_summary",
+        "parameters": {},
+        "lifespan": 100
       },
       {
         "name": "required_transportation",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
+        "parameters": {},
+        "lifespan": 100
       },
       {
         "name": "required_grocery",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
+        "parameters": {},
+        "lifespan": 100
       },
       {
-        "name": "not_required_city_from",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 95
-      },
-      {
-        "name": "not_required_rent_area",
-        "parameters": {
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ]
-        },
-        "lifespan": 99
+        "name": "required_rent_area",
+        "parameters": {},
+        "lifespan": 100
       },
       {
         "name": "required_rent_flattype",
-        "parameters": {
-          "original_city": "Berlin",
-          "learn_about.original": "Moorgate",
-          "learn_about": [
-            "Moorgate"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 93
+        "parameters": {},
+        "lifespan": 100
       }
     ],
     "metadata": {
-      "intentId": "33f47294-f231-43f9-a61b-932fd527895b",
+      "intentId": "e6f4d04c-739c-4fcd-a3e8-16dec3d86e40",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "ben.rent.area.pick"
+      "webhookResponseTime": 577,
+      "intentName": "ben.input.welcome"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n",
+      "source": "apiai-webhook-sample",
+      "displayText": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n",
       "messages": [
         {
           "type": 0,
-          "speech": ""
+          "speech": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n"
         }
-      ]
+      ],
+      "data": {
+        "action": "ben.input.welcome",
+        "fire_event": "next",
+        "distination_city": "London",
+        "your_company": "Goppa",
+        "user_name": "John"
+      }
     },
     "score": 1
   },
   "status": {
-    "code": 206,
-    "errorType": "partial_content",
-    "errorDetails": "Webhook call failed. Error: 400 Bad Request"
+    "code": 200,
+    "errorType": "success"
   },
-  "sessionId": "3f795883-ae9f-48fd-bca8-ba3e25de02af"
+  "sessionId": "d74f2758-3d72-44c5-9436-fa649756135a"
 }

@@ -4,17 +4,16 @@ const jsonQuery = require('json-query')
 module.exports = {
   commutinggroceries_amount_text(parameterscontextout,requestBody){
     
-    
-    let not_required_transportation=jsonQuery('result.contexts[name="not_required_transportation" ]', {
+    let not_required_transportation=jsonQuery('result.contexts.[*].name', {
         data: requestBody
-    }).value;
-    
-    let not_required_grocery=jsonQuery('result.contexts[name="not_required_grocery"]', {
+    }).value.indexOf("not_required_transportation");
+
+    let not_required_grocery=jsonQuery('result.contexts.[*].name', {
         data: requestBody
-    }).value;
+    }).value.indexOf("not_required_grocery");
     
     
-    if(not_required_grocery!=undefined && not_required_transportation!=undefined){
+    if(not_required_grocery!=-1 && not_required_transportation!=-1){
       parameterscontextout["commutinggroceries_amount_text"]="As you can see that takes your total minimum expense to {AMOUNT}."
     }
     else{
