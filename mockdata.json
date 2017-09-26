@@ -31,12 +31,12 @@
         "lifespan": 100
       },
       {
-        "name": "required_transportation",
+        "name": "not_required_grocery",
         "parameters": {},
         "lifespan": 100
       },
       {
-        "name": "required_grocery",
+        "name": "not_required_transportation",
         "parameters": {},
         "lifespan": 100
       },
