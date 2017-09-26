@@ -1,4 +1,0 @@
-great we are done here, 
-you are moving from {original_city} 
-you want to live in {flattype_to_stay} at {area_to_stay} commmute with {TransportationType} and eat outside {TimesAWeek}
-you can still go back and change some things like area to learn about, type of flat, commute method or your groceries habits
