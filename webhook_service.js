@@ -61,7 +61,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     let template=getTemplate(requestBody.result.action);
     // build the speech to the user
     speech = getSpeech(template, parameterscontextout);
-    parameterscontextout.test={testinner:{testinnerinner:1}};
+    
     // return object that works for api ai
     return {
         speech: speech,
