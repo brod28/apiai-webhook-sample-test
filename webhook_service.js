@@ -61,12 +61,12 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     let template=getTemplate(requestBody.result.action);
     // build the speech to the user
     speech = getSpeech(template, parameterscontextout);
-
+    parameterscontextout.test={testinner:{testinnerinner:1}};
     // return object that works for api ai
     return {
         speech: speech,
         displayText: speech,
-        data:{context:parameterscontextout,test:{testinner:1}},
+        data:parameterscontextout,
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
