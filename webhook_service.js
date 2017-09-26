@@ -66,7 +66,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     return {
         speech: speech,
         displayText: speech,
-        data:parameterscontextout,
+        data:{context:parameterscontextout,test:{testinner:1}},
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
