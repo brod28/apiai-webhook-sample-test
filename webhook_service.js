@@ -54,10 +54,11 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     // if neccesary excute business rules and store results in context 
     try
     {
+        parameterscontextout["debug"]=0;
         parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
     }
     catch(err){
-        console.log(err);
+        parameterscontextout["debug"]=err;
     }
     
     // get the template
