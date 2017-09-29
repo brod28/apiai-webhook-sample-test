@@ -1,4 +1,5 @@
 'use strict';
+const infographics = require('../../infographics.js');
 
 const data = require('../../data.js');
 const jsonQuery = require('json-query')
