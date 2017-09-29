@@ -9,6 +9,7 @@ module.exports = {
   processor:function(parameterscontextout,requestBody)
   {
 
+    infographics.infographic_1(parameterscontextout,requestBody);
 
     
 

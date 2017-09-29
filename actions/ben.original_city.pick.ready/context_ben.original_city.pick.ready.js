@@ -12,7 +12,6 @@ module.exports = {
   {
     // after go to next intent
     parameterscontextout["fire_event"]="next";
-    infographics.infographic_1(parameterscontextout,requestBody);
 
     
 
