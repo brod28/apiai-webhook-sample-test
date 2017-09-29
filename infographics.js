@@ -4,14 +4,22 @@ const data = require('./data.js');
 
 module.exports = {
   infographic_1(parameterscontextout,requestBody){
+
+    parameterscontextout["debug"]=1;
       // examples of query context
       let original_city=jsonQuery('result.contexts[name=datakeeper]', {
           data: requestBody
       }).value.parameters.original_city
-      // use API (sync request) to get country for the original city
+     parameterscontextout["debug"]=2;
+     // use API (sync request) to get country for the original city
       let request = require('sync-request');
+     parameterscontextout["debug"]=3;
       let res = request('GET', 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q='+original_city);
+           parameterscontextout["debug"]=4;
+
       let countries=JSON.parse(res.getBody('utf8').substr(2).slice(0, -2));
+           parameterscontextout["debug1"]=countries;
+
       let country="";
 
       // check that country is not United State or Canada
@@ -20,6 +28,7 @@ module.exports = {
             if(!element.includes("Canada")){
                 // extract just the country from the response
                 country=element.split(',')[element.split(',').length-1].substr(1);
+               parameterscontextout["debug2"]=country;
             }
           }
       })
@@ -28,7 +37,7 @@ module.exports = {
       let country_data=jsonQuery('body[Country='+country+']', {
           data: data.country_data
       }).value;
-
+               parameterscontextout["debug3"]=country_data;
       parameterscontextout["Infographics"]={number:1,data:{country_data:country_data}};
   },
     infographic_2(parameterscontextout,requestBody){
