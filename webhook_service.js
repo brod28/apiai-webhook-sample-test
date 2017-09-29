@@ -59,6 +59,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     }
     catch(err){
         parameterscontextout["debug"]=err.toString();
+        console.log(err);
     }
     
     // get the template
