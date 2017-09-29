@@ -10,10 +10,21 @@
   "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
   "license": "Apache 2.0",
   "dependencies": {
+    "apiai": "^4.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.13.4",
-    "apiai": "^4.0.3",
     "json-query": "^2.2.2",
-    "string-template":"1.0.0"  
-  }
+    "request": "^2.83.0",
+    "string-template": "1.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brod28/apiai-webhook-sample-test.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/brod28/apiai-webhook-sample-test/issues"
+  },
+  "homepage": "https://github.com/brod28/apiai-webhook-sample-test#readme"
 }
