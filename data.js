@@ -203,4 +203,12 @@ module.exports = {
  req:{
   body:JSON.parse(require('fs').readFileSync('./mockdata.json', 'utf8'))
   }
+,
+ country_data:{
+  body:JSON.parse(require('fs').readFileSync('./data_country.json', 'utf8'))
+  }
+,
+ area_data:{
+  body:JSON.parse(require('fs').readFileSync('./data_area.json', 'utf8'))
+  }
 };

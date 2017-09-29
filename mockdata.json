@@ -1,79 +1,121 @@
 {
-  "id": "553e988b-bbfe-428b-9eb0-5953bae37a9e",
-  "timestamp": "2017-09-26T12:29:02.152Z",
+  "id": "50e798cd-f816-49cd-b7bb-8ce3eeb9b9d3",
+  "timestamp": "2017-09-29T17:19:24.898Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "c_welcome",
+    "resolvedQuery": "Berlin",
     "action": "ben.original_city.pick.ready",
     "actionIncomplete": false,
-    "parameters": {},
+    "parameters": {
+      "original_city": "Berlin"
+    },
     "contexts": [
-      {
-        "name": "required_city_from",
-        "parameters": {},
-        "lifespan": 100
-      },
       {
         "name": "datakeeper",
         "parameters": {
-          "action": "ben.input.welcome",
-          "fire_event": "next",
-          "distination_city": "London",
+          "original_city": "Paris",
           "your_company": "Goppa",
-          "user_name": "John"
+          "fire_event": "",
+          "Infographics": {},
+          "user_name": "John",
+          "action": "ben.original_city.pick",
+          "original_city.original": "Berlin",
+          "distination_city": "London"
         },
         "lifespan": 100
       },
       {
         "name": "required_rent_summary",
-        "parameters": {},
-        "lifespan": 100
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 96
       },
       {
-        "name": "not_required_grocery",
-        "parameters": {},
-        "lifespan": 100
+        "name": "required_grocery",
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 96
       },
       {
-        "name": "not_required_transportation",
-        "parameters": {},
-        "lifespan": 100
+        "name": "benoriginal_citypick-followup",
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 2
+      },
+      {
+        "name": "required_transportation",
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 96
       },
       {
         "name": "required_rent_area",
-        "parameters": {},
-        "lifespan": 100
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 96
+      },
+      {
+        "name": "not_required_city_from",
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 99
+      },
+      {
+        "name": "benoriginal_cityquestion-followup",
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 1
       },
       {
         "name": "required_rent_flattype",
-        "parameters": {},
-        "lifespan": 100
+        "parameters": {
+          "original_city": "Berlin",
+          "original_city.original": "Berlin"
+        },
+        "lifespan": 96
       }
     ],
     "metadata": {
-      "intentId": "e6f4d04c-739c-4fcd-a3e8-16dec3d86e40",
+      "intentId": "64f58053-4024-4874-b1e7-8784ab57075e",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 577,
-      "intentName": "ben.input.welcome"
+      "webhookResponseTime": 134,
+      "intentName": "ben.original_city.pick"
     },
     "fulfillment": {
-      "speech": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n",
+      "speech": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on.",
       "source": "apiai-webhook-sample",
-      "displayText": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n",
+      "displayText": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on.",
       "messages": [
         {
           "type": 0,
-          "speech": "Hi, I'm Ben. I'm here to help you work out your basic monthly expenses in London; rent, commuting, and groceries. \n"
+          "speech": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on."
         }
       ],
       "data": {
-        "action": "ben.input.welcome",
-        "fire_event": "next",
-        "distination_city": "London",
+        "original_city": "Berlin",
         "your_company": "Goppa",
-        "user_name": "John"
+        "fire_event": "",
+        "Infographics": {},
+        "user_name": "John",
+        "action": "ben.original_city.pick",
+        "original_city.original": "Berlin",
+        "distination_city": "London"
       }
     },
     "score": 1
