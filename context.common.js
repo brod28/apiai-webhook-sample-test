@@ -69,7 +69,7 @@ module.exports = {
     return transportation_cost;
   },
 // calculation of grocceries cost
-  get_grocery_cost(requestBody){
+  get_groceries_cost(requestBody){
     
     let grocerries_cost=data.grocerries_cost;
     let timesAWeek=this.get_parameters(requestBody).TimesAWeek;
