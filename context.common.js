@@ -92,6 +92,8 @@ module.exports = {
   },
 // calculation of rent cost
   get_rent_cost(requestBody){
+    let flattype_to_stay=this.get_parameters(requestBody).flattype_to_stay;
+    
     let area_to_stay=this.get_parameters(requestBody).area_to_stay;
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
