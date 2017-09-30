@@ -11,7 +11,6 @@ module.exports = {
     // after go to next intent
     parameterscontextout["fire_event"]="rent_area_change";
 
-    
 
     return parameterscontextout; 
   } 

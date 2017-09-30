@@ -1,33 +1,15 @@
 'use strict';
 const jsonQuery = require('json-query')
 const data = require('./data.js');
-//sync request (even it is implemented with promises)
-const  get_source_at = function(uri){
-    var source;
-      let request = require('request');
-    request({ uri:uri}, function (error, response, body) {
-        source = body;
-        console.log(body);
-    });
-    while(source === undefined) {
-      require('deasync').runLoopOnce();
-    }
-    return source;
-};
-// return parameteres 
-const get_parameters=function(requestBody){
-    return jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters
-}
+const context_common = require('./context.common.js');
 module.exports = {
   infographic_1(parameterscontextout,requestBody){
 
       // examples of query context
-      let original_city=get_parameters(requestBody).original_city;
+    let original_city=context_common.get_parameters(requestBody).original_city;
      // use API (sync request) to get country for the original city
 
-     let res=get_source_at('http://gd.geobytes.com/AutoCompleteCity?callback=?&q='+original_city)
+    let res=context_common.get_source_at('http://gd.geobytes.com/AutoCompleteCity?callback=?&q='+original_city)
 
     let countries=JSON.parse(res.substr(2).slice(0, -2));
 
@@ -50,33 +32,32 @@ module.exports = {
         data: data.country_data
     }).value;
 
-    parameterscontextout["Infographics"]={number:1,data_infographic:{country_data:country_data}};
+    parameterscontextout["Infographics"]={
+        number:1,
+        data_infographic:{
+            country_data:country_data
+        }
+    };
   },
+
   infographic_2(parameterscontextout,requestBody){
-      parameterscontextout["Infographics"]={number:2};
+    parameterscontextout["Infographics"]={
+        number:2
+    };
   },
+
   infographic_3(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay;
+    let area_data=context_common.get_area_data(requestBody);
 
-    let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
-        data: data.area_data
-    }).value;
-
-    parameterscontextout["Infographics"]={number:3,data_infographic:area_data};
+    parameterscontextout["Infographics"]={
+        number:3,
+        data_infographic:area_data
+    };
   },
-  infographic_4(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay;
-    let flattype_to_stay=get_parameters(requestBody).flattype_to_stay;
 
-    let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
-        data: data.area_data
-    }).value;
-    
-    let rent=area_data.Non_SI_1_bed_rent;
-    
-    if(flattype_to_stay=="room"){
-        rent=area_data.Non_SI_room_rent;
-    }
+  infographic_4(parameterscontextout,requestBody){
+
+    let rent=context_common.get_rent_cost(requestBody);
 
     let data_infographic={
         rent:rent,
@@ -84,49 +65,61 @@ module.exports = {
         name:parameterscontextout["user_name"]
     };
 
-    parameterscontextout["Infographics"]={number:4,data_infographic:data_infographic};
+    parameterscontextout["Infographics"]={
+        number:4,
+        data_infographic:data_infographic
+    };
   },
+
   infographic_5(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay;
+    let area_data=context_common.get_area_data(requestBody);
 
-    let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
-        data: data.area_data
-    }).value;
-
-    parameterscontextout["Infographics"]={number:5,data_infographic:area_data};
+    parameterscontextout["Infographics"]={
+        number:5,
+        data_infographic:area_data
+    };
   },
+  
   infographic_6(parameterscontextout,requestBody){
     let grocerries_cost=data.grocerries_cost;
-    parameterscontextout["Infographics"]={number:6,data_infographic:grocerries_cost};
+    parameterscontextout["Infographics"]={
+        number:6,
+        data_infographic:grocerries_cost
+    };
   },
-   infographic_10(parameterscontextout,requestBody){
+  
+  infographic_7(parameterscontextout,requestBody){
+
+    let cost={
+        rent_cost:context_common.get_rent_cost(requestBody),
+        transportation_cost:context_common.get_transportation_cost(requestBody),
+        groceries_cost:context_common.get_groceries_cost(requestBody)
+    }; 
+
+    parameterscontextout["Infographics"]={
+        number:7,
+        data_infographic:cost
+    };
+  },
+
+  infographic_8(parameterscontextout,requestBody){
+    let user_cost={
+        rent_cost:context_common.get_rent_cost(requestBody),
+        transportation_cost:context_common.get_transportation_cost(requestBody),
+        groceries_cost:context_common.get_groceries_cost(requestBody)
+    }; 
     
-      // examples of query context
-      let original_city=jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters.original_city
-      let area_to_stay=jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters.area_to_stay[0]
-      let flattype_to_stay=jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters.flattype_to_stay[0]
-      let TransportationType=jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters.TransportationType[0]
-      let TimesAWeek=jsonQuery('result.contexts[name=datakeeper]', {
-          data: requestBody
-      }).value.parameters.TimesAWeek
-      
-      let country_data=jsonQuery('body[Country=Netherlands]', {
-          data: data.country_data
-      }).value;
-
-      parameterscontextout["Infographics"]={number:1,data:{country_data:country_data}};
+    parameterscontextout["Infographics"]={
+        number:8,
+        user_name:parameterscontextout["user_name"],
+        distination_city:parameterscontextout["distination_city"],
+        area_to_stay:context_common.get_parameters(requestBody).area_to_stay,
+        data_infographic:{
+            user_cost:user_cost,
+            others_cost:user_cost
+        }
+    };
   }
-
-
-
 };
 
 
