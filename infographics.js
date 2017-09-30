@@ -71,11 +71,16 @@ module.exports = {
 
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
-    }).value;
-
+    }).value[0];
+    
+    let rent=area_data.Non-SI_1_bed_rent;
+    
+    if(area_data=="room"){
+        rent=area_data.Non-SI_room_rent;
+    }
 
     let data_infographic={
-        rent:area_data["Non-SI_"+flattype_to_stay+"_rent"],
+        rent:rent,
         destination_city:parameterscontextout["distination_city"],
         name:parameterscontextout["user_name"]
     };
