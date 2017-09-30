@@ -1,122 +1,138 @@
 {
-  "id": "50e798cd-f816-49cd-b7bb-8ce3eeb9b9d3",
-  "timestamp": "2017-09-29T17:19:24.898Z",
+  "id": "954003a4-ef2a-4011-95fc-85e1a4bc625e",
+  "timestamp": "2017-09-30T20:06:00.971Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "Berlin",
-    "action": "ben.original_city.pick.ready",
+    "resolvedQuery": "I want to learn about Liverpool street",
+    "speech": "",
+    "action": "ben.rent.area.pick",
     "actionIncomplete": false,
     "parameters": {
-      "original_city": "Berlin"
+      "area_to_stay": [
+        "Liverpool Street"
+      ]
     },
     "contexts": [
       {
         "name": "datakeeper",
         "parameters": {
-          "original_city": "Paris",
+          "original_city": "Berlin",
           "your_company": "Goppa",
+          "debug": "SyntaxError: Invalid shorthand property initializer",
           "fire_event": "",
+          "area_to_stay.original": "Liverpool street",
           "Infographics": {},
           "user_name": "John",
-          "action": "ben.original_city.pick",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
+          "_debug_requestBody": "{\"id\":\"d037bafa-5f8d-43c8-a05f-810e8d67da34\",\"timestamp\":\"2017-09-30T20:05:48.334Z\",\"lang\":\"en\",\"result\":{\"source\":\"agent\",\"resolvedQuery\":\"ready\",\"speech\":\"\",\"action\":\"ben.original_city.pick.ready\",\"actionIncomplete\":false,\"parameters\":{},\"contexts\":[{\"name\":\"datakeeper\",\"parameters\":{\"original_city\":\"Berlin\",\"your_company\":\"Goppa\",\"debug\":\"SyntaxError: Invalid shorthand property initializer\",\"fire_event\":\"\",\"Infographics\":{},\"user_name\":\"John\",\"_debug_requestBody\":\"{\\\"id\\\":\\\"e59c3608-db09-4336-9b7b-7fc108cdad74\\\",\\\"timestamp\\\":\\\"2017-09-30T20:05:45.434Z\\\",\\\"lang\\\":\\\"en\\\",\\\"result\\\":{\\\"source\\\":\\\"agent\\\",\\\"resolvedQuery\\\":\\\"I am from Berlin\\\",\\\"speech\\\":\\\"\\\",\\\"action\\\":\\\"ben.original_city.pick\\\",\\\"actionIncomplete\\\":false,\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\"},\\\"contexts\\\":[{\\\"name\\\":\\\"datakeeper\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"your_company\\\":\\\"Goppa\\\",\\\"debug\\\":\\\"ok\\\",\\\"fire_event\\\":\\\"\\\",\\\"Infographics\\\":{},\\\"user_name\\\":\\\"John\\\",\\\"_debug_requestBody\\\":\\\"{\\\\\\\"id\\\\\\\":\\\\\\\"898ec53a-385a-4e60-bd80-92e26285b1d7\\\\\\\",\\\\\\\"timestamp\\\\\\\":\\\\\\\"2017-09-30T20:05:06.753Z\\\\\\\",\\\\\\\"lang\\\\\\\":\\\\\\\"en\\\\\\\",\\\\\\\"result\\\\\\\":{\\\\\\\"source\\\\\\\":\\\\\\\"agent\\\\\\\",\\\\\\\"resolvedQuery\\\\\\\":\\\\\\\"original_city_question\\\\\\\",\\\\\\\"speech\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"action\\\\\\\":\\\\\\\"ben.original_city.question\\\\\\\",\\\\\\\"actionIncomplete\\\\\\\":false,\\\\\\\"parameters\\\\\\\":{},\\\\\\\"contexts\\\\\\\":[{\\\\\\\"name\\\\\\\":\\\\\\\"datakeeper\\\\\\\",\\\\\\\"parameters\\\\\\\":{\\\\\\\"your_company\\\\\\\":\\\\\\\"Goppa\\\\\\\",\\\\\\\"debug\\\\\\\":\\\\\\\"ok\\\\\\\",\\\\\\\"fire_event\\\\\\\":\\\\\\\"original_city_question\\\\\\\",\\\\\\\"Infographics\\\\\\\":{},\\\\\\\"user_name\\\\\\\":\\\\\\\"John\\\\\\\",\\\\\\\"_debug_requestBody\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"adf8673f-cbe2-41c6-9293-e2375c9309dc\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"timestamp\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"2017-09-30T20:05:05.989Z\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"lang\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"en\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"result\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"source\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"agent\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"resolvedQuery\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"next\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"action\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ben.original_city.enterance\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"actionIncomplete\\\\\\\\\\\\\\\":false,\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"contexts\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_city_from\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"next\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":0},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"datakeeper\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"your_company\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"Goppa\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"debug\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ok\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"fire_event\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"next\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"Infographics\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"user_name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"John\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"_debug_requestBody\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"id\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"c274bd82-19f7-436a-9d24-4f8c5eca7792\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"timestamp\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"2017-09-30T20:05:05.033Z\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lang\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"en\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"result\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"source\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"agent\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"resolvedQuery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"WELCOME\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"action\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ben.input.welcome\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"actionIncomplete\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":false,\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"contexts\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_city_from\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_rent_summary\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_grocery\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_transportation\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_rent_area\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"welcome\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":0},{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"required_rent_flattype\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":100}],\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"metadata\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"intentId\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"e6f4d04c-739c-4fcd-a3e8-16dec3d86e40\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"webhookUsed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"true\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"webhookForSlotFillingUsed\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"false\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"intentName\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"ben.input.welcome\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"fulfillment\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"messages\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"type\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":0,\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}]},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"score\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":1},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"status\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"code\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":200,\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"errorType\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"success\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"sessionId\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"310c723b-eb8f-40ca-ade1-1258697f6150\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"}\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"action\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ben.input.welcome\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"distination_city\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"London\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_rent_summary\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_grocery\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_transportation\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_rent_area\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99},{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"required_rent_flattype\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"parameters\\\\\\\\\\\\\\\":{},\\\\\\\\\\\\\\\"lifespan\\\\\\\\\\\\\\\":99}],\\\\\\\\\\\\\\\"metadata\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"intentId\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"8442fa37-0f93-444a-a77b-3df41d6612f8\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"webhookUsed\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"true\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"webhookForSlotFillingUsed\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"false\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"intentName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"ben.original_city.enterance\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"fulfillment\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"messages\\\\\\\\\\\\\\\":[{\\\\\\\\\\\\\\\"type\\\\\\\\\\\\\\\":0,\\\\\\\\\\\\\\\"speech\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"\\\\\\\\\\\\\\\"}]},\\\\\\\\\\\\\\\"score\\\\\\\\\\\\\\\":1},\\\\\\\\\\\\\\\"status\\\\\\\\\\\\\\\":{\\\\\\\\\\\\\\\"code\\\\\\\\\\\\\\\":200,\\\\\\\\\\\\\\\"errorType\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"success\\\\\\\\\\\\\\\"},\\\\\\\\\\\\\\\"sessionId\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"310c723b-eb8f-40ca-ade1-1258697f6150\\\\\\\\\\\\\\\"}\\\\\\\",\\\\\\\"action\\\\\\\":\\\\\\\"ben.original_city.enterance\\\\\\\",\\\\\\\"distination_city\\\\\\\":\\\\\\\"London\\\\\\\"},\\\\\\\"lifespan\\\\\\\":99},{\\\\\\\"name\\\\\\\":\\\\\\\"required_rent_summary\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":98},{\\\\\\\"name\\\\\\\":\\\\\\\"required_transportation\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":98},{\\\\\\\"name\\\\\\\":\\\\\\\"required_grocery\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":98},{\\\\\\\"name\\\\\\\":\\\\\\\"required_rent_area\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":98},{\\\\\\\"name\\\\\\\":\\\\\\\"not_required_city_from\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":100},{\\\\\\\"name\\\\\\\":\\\\\\\"benoriginal_cityquestion-followup\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":2},{\\\\\\\"name\\\\\\\":\\\\\\\"original_city_question\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":0},{\\\\\\\"name\\\\\\\":\\\\\\\"required_rent_flattype\\\\\\\",\\\\\\\"parameters\\\\\\\":{},\\\\\\\"lifespan\\\\\\\":98}],\\\\\\\"metadata\\\\\\\":{\\\\\\\"intentId\\\\\\\":\\\\\\\"fc45e1af-dbfa-4a00-95a1-7e6f9128e603\\\\\\\",\\\\\\\"webhookUsed\\\\\\\":\\\\\\\"true\\\\\\\",\\\\\\\"webhookForSlotFillingUsed\\\\\\\":\\\\\\\"false\\\\\\\",\\\\\\\"intentName\\\\\\\":\\\\\\\"ben.original_city.question\\\\\\\"},\\\\\\\"fulfillment\\\\\\\":{\\\\\\\"speech\\\\\\\":\\\\\\\"Where are you from?\\\\\\\",\\\\\\\"messages\\\\\\\":[{\\\\\\\"type\\\\\\\":0,\\\\\\\"speech\\\\\\\":\\\\\\\"Where are you from?\\\\\\\"}]},\\\\\\\"score\\\\\\\":1},\\\\\\\"status\\\\\\\":{\\\\\\\"code\\\\\\\":200,\\\\\\\"errorType\\\\\\\":\\\\\\\"success\\\\\\\"},\\\\\\\"sessionId\\\\\\\":\\\\\\\"310c723b-eb8f-40ca-ade1-1258697f6150\\\\\\\"}\\\",\\\"action\\\":\\\"ben.original_city.question\\\",\\\"original_city.original\\\":\\\"Berlin\\\",\\\"distination_city\\\":\\\"London\\\"},\\\"lifespan\\\":99},{\\\"name\\\":\\\"required_rent_summary\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":97},{\\\"name\\\":\\\"benoriginal_citypick-followup\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":2},{\\\"name\\\":\\\"required_transportation\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":97},{\\\"name\\\":\\\"required_grocery\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":97},{\\\"name\\\":\\\"required_rent_area\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":97},{\\\"name\\\":\\\"not_required_city_from\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":99},{\\\"name\\\":\\\"benoriginal_cityquestion-followup\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":1},{\\\"name\\\":\\\"required_rent_flattype\\\",\\\"parameters\\\":{\\\"original_city\\\":\\\"Berlin\\\",\\\"original_city.original\\\":\\\"Berlin\\\"},\\\"lifespan\\\":97}],\\\"metadata\\\":{\\\"intentId\\\":\\\"64f58053-4024-4874-b1e7-8784ab57075e\\\",\\\"webhookUsed\\\":\\\"true\\\",\\\"webhookForSlotFillingUsed\\\":\\\"false\\\",\\\"intentName\\\":\\\"ben.original_city.pick\\\"},\\\"fulfillment\\\":{\\\"speech\\\":\\\"\\\",\\\"messages\\\":[{\\\"type\\\":0,\\\"speech\\\":\\\"\\\"}]},\\\"score\\\":1},\\\"status\\\":{\\\"code\\\":200,\\\"errorType\\\":\\\"success\\\"},\\\"sessionId\\\":\\\"310c723b-eb8f-40ca-ade1-1258697f6150\\\"}\",\"action\":\"ben.original_city.pick\",\"original_city.original\":\"Berlin\",\"distination_city\":\"London\"},\"lifespan\":99},{\"name\":\"required_rent_summary\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":96},{\"name\":\"required_grocery\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":96},{\"name\":\"required_transportation\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":96},{\"name\":\"benoriginal_citypick-followup\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":1},{\"name\":\"required_rent_area\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":96},{\"name\":\"not_required_city_from\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":98},{\"name\":\"benoriginal_cityquestion-followup\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":0},{\"name\":\"required_rent_flattype\",\"parameters\":{\"original_city\":\"Berlin\",\"original_city.original\":\"Berlin\"},\"lifespan\":96}],\"metadata\":{\"intentId\":\"17158ec6-0850-455b-b713-c41a6799410a\",\"webhookUsed\":\"true\",\"webhookForSlotFillingUsed\":\"false\",\"intentName\":\"ben.original_city.pick.ready\"},\"fulfillment\":{\"speech\":\"\",\"messages\":[{\"type\":0,\"speech\":\"\"}]},\"score\":1},\"status\":{\"code\":200,\"errorType\":\"success\"},\"sessionId\":\"310c723b-eb8f-40ca-ade1-1258697f6150\"}",
+          "action": "ben.original_city.pick.ready",
           "original_city.original": "Berlin",
           "distination_city": "London"
         },
-        "lifespan": 100
+        "lifespan": 99
       },
       {
         "name": "required_rent_summary",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 96
+        "lifespan": 95
       },
       {
         "name": "required_grocery",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 96
+        "lifespan": 95
       },
       {
         "name": "benoriginal_citypick-followup",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 2
+        "lifespan": 0
       },
       {
         "name": "required_transportation",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 96
+        "lifespan": 95
       },
       {
         "name": "required_rent_area",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 96
+        "lifespan": 95
       },
       {
         "name": "not_required_city_from",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 99
-      },
-      {
-        "name": "benoriginal_cityquestion-followup",
-        "parameters": {
-          "original_city": "Berlin",
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 1
+        "lifespan": 97
       },
       {
         "name": "required_rent_flattype",
         "parameters": {
           "original_city": "Berlin",
+          "area_to_stay.original": "Liverpool street",
+          "area_to_stay": [
+            "Liverpool Street"
+          ],
           "original_city.original": "Berlin"
         },
-        "lifespan": 96
+        "lifespan": 95
       }
     ],
     "metadata": {
-      "intentId": "64f58053-4024-4874-b1e7-8784ab57075e",
+      "intentId": "33f47294-f231-43f9-a61b-932fd527895b",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "webhookResponseTime": 134,
-      "intentName": "ben.original_city.pick"
+      "intentName": "ben.rent.area.pick"
     },
     "fulfillment": {
-      "speech": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on.",
-      "source": "apiai-webhook-sample",
-      "displayText": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on.",
+      "speech": "",
       "messages": [
         {
           "type": 0,
-          "speech": "<Great> I'll show you how London compares to Berlin so you can better understand how much things cost! I'll show you prices in both euros and pounds. \n\nLet me know when you are ready to move on."
+          "speech": ""
         }
-      ],
-      "data": {
-        "original_city": "Berlin",
-        "your_company": "Goppa",
-        "fire_event": "",
-        "Infographics": {},
-        "user_name": "John",
-        "action": "ben.original_city.pick",
-        "original_city.original": "Berlin",
-        "distination_city": "London"
-      }
+      ]
     },
     "score": 1
   },
@@ -124,5 +140,5 @@
     "code": 200,
     "errorType": "success"
   },
-  "sessionId": "d74f2758-3d72-44c5-9436-fa649756135a"
+  "sessionId": "310c723b-eb8f-40ca-ade1-1258697f6150"
 }

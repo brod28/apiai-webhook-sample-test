@@ -37,26 +37,26 @@ module.exports = {
       return source;
   },
 // return parameteres 
-  get_parameters=function(requestBody){
+  get_parameters(requestBody){
     return jsonQuery('result.contexts[name=datakeeper]', {
           data: requestBody
       }).value.parameters
   },
 
 //return the relevant area data
-  get_area_data=function(requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay;
+  get_area_data(requestBody){
+    let area_to_stay=this.get_parameters(requestBody).area_to_stay;
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
     }).value;
 
   },
 // calculate transportation cost
-  get_transportation_cost=function(requestBody){
+  get_transportation_cost(requestBody){
     
-    let transportationType=get_parameters(requestBody).TransportationType;
+    let transportationType=this.get_parameters(requestBody).TransportationType;
 
-    let area_data=get_area_data(requestBody);
+    let area_data=this.get_area_data(requestBody);
 
     let transportation_cost=area_data.Cost_of_tube;
     if(transportationType=="bike"){
@@ -69,10 +69,10 @@ module.exports = {
     return transportation_cost;
   },
 // calculation of grocceries cost
-  get_grocery_cost=function(requestBody){
+  get_grocery_cost(requestBody){
     
     let grocerries_cost=data.grocerries_cost;
-    let timesAWeek=get_parameters(requestBody).TimesAWeek;
+    let timesAWeek=this.get_parameters(requestBody).TimesAWeek;
 
     let grocerry_cost=data.grocerries_cost._7days;
     if(timesAWeek==0){
@@ -91,8 +91,8 @@ module.exports = {
     return grocerry_cost;
   },
 // calculation of rent cost
-  get_rent_cost=function(requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay;
+  get_rent_cost(requestBody){
+    let area_to_stay=this.get_parameters(requestBody).area_to_stay;
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
     }).value;

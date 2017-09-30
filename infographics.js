@@ -2,6 +2,7 @@
 const jsonQuery = require('json-query')
 const data = require('./data.js');
 const context_common = require('./context.common.js');
+
 module.exports = {
   infographic_1(parameterscontextout,requestBody){
 
