@@ -15,7 +15,7 @@ const  get_source_at = function(uri){
     return source;
 };
 // return parameteres 
-const get_parameters=function(){
+const get_parameters=function(requestBody){
     return jsonQuery('result.contexts[name=datakeeper]', {
           data: requestBody
       }).value.parameters
@@ -24,7 +24,7 @@ module.exports = {
   infographic_1(parameterscontextout,requestBody){
 
       // examples of query context
-      let original_city=get_parameters().original_city;
+      let original_city=get_parameters(requestBody).original_city;
      // use API (sync request) to get country for the original city
 
      let res=get_source_at('http://gd.geobytes.com/AutoCompleteCity?callback=?&q='+original_city)
@@ -56,7 +56,7 @@ module.exports = {
       parameterscontextout["Infographics"]={number:2};
   },
   infographic_3(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters().area_to_stay;
+    let area_to_stay=get_parameters(requestBody).area_to_stay;
 
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
