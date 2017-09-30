@@ -64,6 +64,24 @@ module.exports = {
 
     parameterscontextout["Infographics"]={number:3,area_to_stay:area_data};
   },
+  infographic_4(parameterscontextout,requestBody){
+    let area_to_stay=get_parameters(requestBody).area_to_stay;
+    let flattype_to_stay=get_parameters(requestBody).flattype_to_stay;
+
+
+    let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
+        data: data.area_data
+    }).value;
+
+
+    let data_infographic={
+        rent:area_data["Non-SI "+flattype_to_stay+" rent"],
+        destination_city:parameterscontextout["distination_city"],
+        name:parameterscontextout["user_name"]
+    };
+
+    parameterscontextout["Infographics"]={number:4,data_infographic:data_infographic};
+  },
    infographic_10(parameterscontextout,requestBody){
     
       // examples of query context
