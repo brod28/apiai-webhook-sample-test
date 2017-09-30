@@ -112,10 +112,10 @@ module.exports = {
     
     parameterscontextout["Infographics"]={
         number:8,
-        user_name:parameterscontextout["user_name"],
-        distination_city:parameterscontextout["distination_city"],
-        area_to_stay:context_common.get_parameters(requestBody).area_to_stay,
         data_infographic:{
+            user_name:parameterscontextout["user_name"],
+            distination_city:parameterscontextout["distination_city"],
+            area_to_stay:context_common.get_parameters(requestBody).area_to_stay,
             user_cost:user_cost,
             others_cost:user_cost
         }
