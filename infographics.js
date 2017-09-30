@@ -75,7 +75,7 @@ module.exports = {
 
 
     let data_infographic={
-        rent:area_data["Non-SI "+flattype_to_stay+" rent"],
+        rent:area_data["Non-SI_"+flattype_to_stay+"_rent"],
         destination_city:parameterscontextout["distination_city"],
         name:parameterscontextout["user_name"]
     };
