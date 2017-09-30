@@ -50,7 +50,7 @@ module.exports = {
         data: data.country_data
     }).value;
 
-    parameterscontextout["Infographics"]={number:1,data:{country_data:country_data}};
+    parameterscontextout["Infographics"]={number:1,data_infographic:{country_data:country_data}};
   },
   infographic_2(parameterscontextout,requestBody){
       parameterscontextout["Infographics"]={number:2};
@@ -62,14 +62,11 @@ module.exports = {
         data: data.area_data
     }).value;
 
-    parameterscontextout["Infographics"]={number:3,area_to_stay:area_data};
+    parameterscontextout["Infographics"]={number:3,data_infographic:area_data};
   },
   infographic_4(parameterscontextout,requestBody){
     let area_to_stay=get_parameters(requestBody).area_to_stay;
     let flattype_to_stay=get_parameters(requestBody).flattype_to_stay;
-
-    parameterscontextout["debug1"]=area_to_stay;
-    parameterscontextout["debug2"]=flattype_to_stay;
 
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
@@ -88,6 +85,19 @@ module.exports = {
     };
 
     parameterscontextout["Infographics"]={number:4,data_infographic:data_infographic};
+  },
+  infographic_5(parameterscontextout,requestBody){
+    let area_to_stay=get_parameters(requestBody).area_to_stay;
+
+    let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
+        data: data.area_data
+    }).value;
+
+    parameterscontextout["Infographics"]={number:5,data_infographic:area_data};
+  },
+  infographic_6(parameterscontextout,requestBody){
+    let grocerries_cost=data.grocerries_cost;
+    parameterscontextout["Infographics"]={number:6,data_infographic:grocerries_cost};
   },
    infographic_10(parameterscontextout,requestBody){
     

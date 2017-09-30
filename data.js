@@ -210,5 +210,12 @@ module.exports = {
 ,
  area_data:{
   body:JSON.parse(require('fs').readFileSync('./data_area.json', 'utf8'))
-  }
+  },
+  grocerries_cost:{
+        _7days:145,
+        _5days:239,
+        _3days:314,
+        _1days:389,
+        _0days:404
+    }
 };
