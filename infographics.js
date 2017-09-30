@@ -56,7 +56,7 @@ module.exports = {
       parameterscontextout["Infographics"]={number:2};
   },
   infographic_3(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay[0];
+    let area_to_stay=get_parameters(requestBody).area_to_stay;
 
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
@@ -65,9 +65,11 @@ module.exports = {
     parameterscontextout["Infographics"]={number:3,area_to_stay:area_data};
   },
   infographic_4(parameterscontextout,requestBody){
-    let area_to_stay=get_parameters(requestBody).area_to_stay[0];
-    let flattype_to_stay=get_parameters(requestBody).flattype_to_stay[0];
+    let area_to_stay=get_parameters(requestBody).area_to_stay;
+    let flattype_to_stay=get_parameters(requestBody).flattype_to_stay;
 
+    parameterscontextout["debug1"]=area_to_stay;
+    parameterscontextout["debug2"]=flattype_to_stay;
 
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
