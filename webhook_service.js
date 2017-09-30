@@ -36,7 +36,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     
     // default value for speach
     var speech = '';
-    parameterscontextout["_debug_requestBody"]=JSON.stringify(requestBody);
+ //   parameterscontextout["_debug_requestBody"]=JSON.stringify(requestBody);
     
     //store the action in context
     parameterscontextout["action"]=requestBody.result.action;
