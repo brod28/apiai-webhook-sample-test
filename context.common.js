@@ -49,7 +49,7 @@ module.exports = {
     let area_data=jsonQuery('body[Name_of_area='+area_to_stay+']', {
         data: data.area_data
     }).value;
-
+    return area_data;
   },
 // calculate transportation cost
   get_transportation_cost(requestBody){
