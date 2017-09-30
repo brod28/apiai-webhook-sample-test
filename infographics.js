@@ -73,10 +73,10 @@ module.exports = {
         data: data.area_data
     }).value;
     
-    let rent=area_data.Non-SI_1_bed_rent;
+    let rent=area_data.Non_SI_1_bed_rent;
     
     if(flattype_to_stay=="room"){
-        rent=area_data.Non-SI_room_rent;
+        rent=area_data.Non_SI_room_rent;
     }
 
     let data_infographic={
