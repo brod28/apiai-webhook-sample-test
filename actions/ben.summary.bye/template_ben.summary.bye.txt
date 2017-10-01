@@ -1,1 +1,1 @@
-Thanks so much for chatting with me! {{user_language_Hello}}
+Thanks so much for chatting with me! {user_language_Goodbye}
