@@ -12,13 +12,16 @@ module.exports = {
     let not_required_grocery=jsonQuery('result.contexts.[*].name', {
         data: requestBody
     }).value.indexOf("not_required_groceries");
-    
-    
+
+    let groceries_cost=this.get_groceries_cost(requestBody) || 0;
+    let transportation_cost=this.get_transportation_cost(requestBody) || 0;
+
+    let amount=groceries_cost+transportation_cost;
     if(not_required_grocery!=-1 && not_required_transportation!=-1){
-      parameterscontextout["commutinggroceries_amount_text"]="As you can see that takes your total minimum expense to {AMOUNT}."
+      parameterscontextout["commutinggroceries_amount_text"]="As you can see that takes your total minimum expense to ‎£"+amount+"."
     }
     else{
-      parameterscontextout["commutinggroceries_amount_text"]="I've added {AMOUNT} to your expenses"
+      parameterscontextout["commutinggroceries_amount_text"]="I've added ‎£"+amount+" to your expenses"
     }
   
   },
@@ -58,12 +61,15 @@ module.exports = {
 
     let area_data=this.get_area_data(requestBody);
 
-    let transportation_cost=area_data.Cost_of_tube;
+    let transportation_cost=undefined;
     if(transportationType=="bike"){
         let transportation_cost=area_data.Cost_of_bike;
     }
     if(transportationType=="walk"){
         let transportation_cost=area_data.Cost_of_walk;
+    }
+    if(transportationType=="public_transport"){
+        let transportation_cost=area_data.Cost_of_tube;
     }
 
     return transportation_cost;
@@ -74,7 +80,7 @@ module.exports = {
     let grocerries_cost=data.grocerries_cost;
     let timesAWeek=this.get_parameters(requestBody).TimesAWeek;
 
-    let grocerry_cost=data.grocerries_cost._7days;
+    let grocerry_cost=undefined;
     if(timesAWeek==0){
         grocerry_cost=data.grocerries_cost._0days;
     }
@@ -86,6 +92,9 @@ module.exports = {
     }
     if(timesAWeek==5){
         grocerry_cost=data.grocerries_cost._5days;
+    }
+    if(timesAWeek==7){
+        grocerry_cost=data.grocerries_cost._7days;
     }
 
     return grocerry_cost;
