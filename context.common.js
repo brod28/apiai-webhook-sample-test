@@ -114,8 +114,38 @@ module.exports = {
         rent=area_data.Non_SI_room_rent;
     }
     return rent;
-  }
+  },
+// get data for original country
+  get_original_country_data(requestBody){
+        // examples of query context
+    let original_city=this.get_parameters(requestBody).original_city;
+     // use API (sync request) to get country for the original city
 
+    let res=this.get_source_at('http://gd.geobytes.com/AutoCompleteCity?callback=?&q='+original_city)
+
+    let countries=JSON.parse(res.substr(2).slice(0, -2));
+
+    let country="";
+
+    // check that country is not United State or Canada and country was not assign yet
+    countries.forEach(function(element) {
+        if(!element.includes("United States")){
+            if(!element.includes("Canada")){
+                if(country==""){
+                    // extract just the country from the response
+                    country=element.split(',')[element.split(',').length-1].substr(1);
+                }
+            }
+        }
+    })
+        
+    // get comperision data for this country
+    let country_data=jsonQuery('body[Country='+country+']', {
+        data: data.country_data
+    }).value;
+
+    return country_data;
+  }
 };
 
 

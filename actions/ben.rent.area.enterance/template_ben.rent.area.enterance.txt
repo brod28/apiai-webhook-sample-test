@@ -1,3 +1,3 @@
-Rent is the most expensive, so let's start there. On the map you can see <<10>> neighbourhoods in London. 
+Rent is the most expensive, so let's start there. On the map you can see 10 neighbourhoods in London. 
 
 Take a look at where your stark colleagues lived and how much they paid in rent. .
