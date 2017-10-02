@@ -51,16 +51,16 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-
+    console.log("test");
+    console.error("test");
     // if neccesary excute business rules and store results in context 
     try
     {
-        parameterscontextout["debug"]="ok";
         parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
     }
     catch(err){
-        parameterscontextout["debug"]=err.toString();
-        console.log(err);
+        console.error(err);
+        console.error(requestBody);
     }
     
     // get the template
