@@ -81,6 +81,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
     console.log("speech " +speech);
+    console.log("event " +parameterscontextout["fire_event"]);
     console.log("response " +JSON.stringify(retval));
 
     // return object that works for api ai
