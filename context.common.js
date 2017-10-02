@@ -14,8 +14,6 @@ module.exports = {
     }).value.indexOf("not_required_groceries");
 
 
-    parameterscontextout["debug1"]=this.get_parameters(requestBody).TransportationType[0];
-    parameterscontextout["debug2"]=this.get_area_data(requestBody);
 
     let groceries_cost=this.get_groceries_cost(requestBody) || 0;
     let transportation_cost=this.get_transportation_cost(requestBody) || 0;
@@ -67,13 +65,13 @@ module.exports = {
 
     let transportation_cost=undefined;
     if(transportationType=="bike"){
-        let transportation_cost=area_data.Cost_of_bike;
+        transportation_cost=area_data.Cost_of_bike;
     }
     if(transportationType=="walk"){
-        let transportation_cost=area_data.Cost_of_walk;
+        transportation_cost=area_data.Cost_of_walk;
     }
     if(transportationType=="public_transport"){
-        let transportation_cost=area_data.Cost_of_tube;
+        transportation_cost=area_data.Cost_of_tube;
     }
 
     return transportation_cost;
