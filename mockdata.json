@@ -1,24 +1,19 @@
 {
-  "id": "18bca992-6d8b-4d61-bfd1-bb53ad26a351",
-  "timestamp": "2017-09-30T20:18:41.022Z",
+  "id": "45c79d07-943c-4afd-99f1-19d27eb41580",
+  "timestamp": "2017-10-02T21:32:10.131Z",
   "lang": "en",
   "result": {
     "source": "agent",
     "resolvedQuery": "next",
     "speech": "",
-    "action": "ben.rent.flattype.enterance",
+    "action": "ben.original_city.enterance",
     "actionIncomplete": false,
     "parameters": {},
     "contexts": [
       {
-        "name": "benrentareaquestion-followup",
-        "parameters": {
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ]
-        },
-        "lifespan": 0
+        "name": "required_city_from",
+        "parameters": {},
+        "lifespan": 99
       },
       {
         "name": "next",
@@ -28,106 +23,53 @@
       {
         "name": "datakeeper",
         "parameters": {
-          "original_city": "Berlin",
           "your_company": "Goppa",
-          "debug": "ok",
           "fire_event": "next",
-          "area_to_stay.original": "Chelsea",
-          "Infographics": {
-            "number": 3
-          },
+          "Infographics": {},
           "user_name": "John",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "action": "ben.rent.area.pick",
-          "original_city.original": "Berlin",
+          "action": "ben.input.welcome",
           "distination_city": "London"
         },
         "lifespan": 99
       },
       {
         "name": "required_rent_summary",
-        "parameters": {
-          "original_city": "Berlin",
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 92
-      },
-      {
-        "name": "required_transportation",
-        "parameters": {
-          "original_city": "Berlin",
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 92
+        "parameters": {},
+        "lifespan": 99
       },
       {
         "name": "required_grocery",
-        "parameters": {
-          "original_city": "Berlin",
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 92
+        "parameters": {},
+        "lifespan": 99
       },
       {
-        "name": "not_required_city_from",
-        "parameters": {
-          "original_city": "Berlin",
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 94
+        "name": "required_transportation",
+        "parameters": {},
+        "lifespan": 99
       },
       {
-        "name": "not_required_rent_area",
-        "parameters": {
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ]
-        },
-        "lifespan": 98
+        "name": "required_rent_area",
+        "parameters": {},
+        "lifespan": 99
       },
       {
         "name": "required_rent_flattype",
-        "parameters": {
-          "original_city": "Berlin",
-          "area_to_stay.original": "Chelsea",
-          "area_to_stay": [
-            "Chelsea"
-          ],
-          "original_city.original": "Berlin"
-        },
-        "lifespan": 92
+        "parameters": {},
+        "lifespan": 99
       }
     ],
     "metadata": {
-      "intentId": "3f040565-f7f0-4f79-85d6-d5c37be37414",
+      "intentId": "8442fa37-0f93-444a-a77b-3df41d6612f8",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "ben.rent.flattype.enterance"
+      "intentName": "ben.original_city.enterance"
     },
     "fulfillment": {
       "speech": "",
       "messages": [
         {
           "type": 0,
+          "id": "4b7c9d7b-fa56-4012-8a25-0d65dc875faa",
           "speech": ""
         }
       ]
@@ -138,5 +80,5 @@
     "code": 200,
     "errorType": "success"
   },
-  "sessionId": "8d020719-523c-d34e-f250-85a2415c015a"
+  "sessionId": "ade06848-efad-127c-ad0e-37e9db6392b5"
 }

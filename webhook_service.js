@@ -51,7 +51,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-    console.log(JSON.stringify(requestBody));
+    console.log("action "+requestBody.result.action);
+    console.log("requestBody "+JSON.stringify(requestBody));
     // if neccesary excute business rules and store results in context 
     try
     {
@@ -59,7 +60,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     }
     catch(err){
         console.error(err);
-        console.error(requestBody);
+        console.error("error "+ requestBody);
     }
     
     // get the template
@@ -77,7 +78,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
-    console.log(JSON.stringify(retval));
+    console.log("response " +JSON.stringify(retval));
 
     // return object that works for api ai
     return retval;
