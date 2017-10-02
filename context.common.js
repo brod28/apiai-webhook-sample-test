@@ -34,7 +34,6 @@ module.exports = {
         let request = require('request');
       request({ uri:uri}, function (error, response, body) {
           source = body;
-          console.log(body);
       });
       while(source === undefined) {
         require('deasync').runLoopOnce();

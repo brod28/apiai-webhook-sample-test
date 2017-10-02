@@ -52,12 +52,11 @@ var SetAreaEntityValues=function(sessionId,neighborhoods){
     var user_entities_request = app.userEntitiesRequest(user_entities_body);
 
     user_entities_request.on('response', function(response) {
-        console.log('User entities response: ');
-        console.log(JSON.stringify(response, null, 4));
+        console.log('User entities response: ' +JSON.stringify(response, null, 4));
     });
 
     user_entities_request.on('error', function(error) {
-        console.log(error);
+        console.error(error);
     });
 
     user_entities_request.end();

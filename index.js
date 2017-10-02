@@ -14,13 +14,11 @@ restService.use(bodyParser.json());
 var webhook_processor=function (req, res) {
 
 
-    console.log('hook request');
 
     try {
         
 
         var response=webhook_service.response(req.body);
-        console.log(response.speech);
         return res.json(response);
 
     } catch (err) {
