@@ -13,6 +13,10 @@ module.exports = {
         data: requestBody
     }).value.indexOf("not_required_groceries");
 
+
+    parameterscontextout["debug1"]=this.get_transportation_cost(requestBody);
+    parameterscontextout["debug2"]=requestBody;
+
     let groceries_cost=this.get_groceries_cost(requestBody) || 0;
     let transportation_cost=this.get_transportation_cost(requestBody) || 0;
 
