@@ -14,8 +14,8 @@ module.exports = {
     }).value.indexOf("not_required_groceries");
 
 
-    parameterscontextout["debug1"]=this.get_transportation_cost(requestBody);
-    parameterscontextout["debug2"]=requestBody;
+    parameterscontextout["debug1"]=this.get_parameters(requestBody).TransportationType[0];
+    parameterscontextout["debug2"]=this.get_area_data(requestBody);
 
     let groceries_cost=this.get_groceries_cost(requestBody) || 0;
     let transportation_cost=this.get_transportation_cost(requestBody) || 0;
