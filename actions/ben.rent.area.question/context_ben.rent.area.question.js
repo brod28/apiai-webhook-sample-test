@@ -49,7 +49,7 @@ var SetAreaEntityValues=function(sessionId,neighborhoods){
         entities: user_entities
     };
 
-    var user_entities_request = app.userEntitiesRequest(user_entities_body);
+/*    var user_entities_request = app.userEntitiesRequest(user_entities_body);
 
     user_entities_request.on('response', function(response) {
         console.log('User entities response: ' +JSON.stringify(response, null, 4));
@@ -59,7 +59,7 @@ var SetAreaEntityValues=function(sessionId,neighborhoods){
         console.error(error);
     });
 
-    user_entities_request.end();
+    user_entities_request.end();*/
 }
 
 

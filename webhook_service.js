@@ -61,8 +61,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
     }
     catch(err){
-        console.error(err);
-        console.error("error "+ requestBody);
+        console.error("error run logic for intent "+err);
+        console.error("error run logic for intent "+ requestBody);
     }
     
     // get the template

@@ -209,7 +209,7 @@ module.exports = {
         msg
         .send()
         .catch(err => 
-            console.error(err)
+            console.error("error chatbase"+ err)
         );
 
     }
