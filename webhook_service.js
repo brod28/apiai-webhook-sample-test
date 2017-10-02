@@ -52,6 +52,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     
 
     console.log("action "+requestBody.result.action);
+    console.log("resolvedQuery "+requestBody.result.resolvedQuery);
+    
     console.log("requestBody "+JSON.stringify(requestBody));
     // if neccesary excute business rules and store results in context 
     try
@@ -78,6 +80,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
+    console.log("speech " +speech);
     console.log("response " +JSON.stringify(retval));
 
     // return object that works for api ai
