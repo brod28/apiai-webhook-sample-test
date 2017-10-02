@@ -51,7 +51,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-    console.error(requestBody);
+    console.log(JSON.stringifyrequestBody());
     // if neccesary excute business rules and store results in context 
     try
     {
@@ -70,14 +70,17 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     const context_common = require('./context.common.js');
     context_common.intent_analytics(requestBody,speech);
 
-    // return object that works for api ai
-    return {
+    let retval={
         speech: speech,
         displayText: speech,
         data:parameterscontextout,
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
+    console.log(retval);
+
+    // return object that works for api ai
+    return retval;
 
 }
 
