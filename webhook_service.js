@@ -51,7 +51,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-    console.log(JSON.stringifyrequestBody());
+    console.log(JSON.stringify(requestBody));
     // if neccesary excute business rules and store results in context 
     try
     {
@@ -77,7 +77,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
-    console.log(retval);
+    console.log(JSON.stringify(retval));
 
     // return object that works for api ai
     return retval;
