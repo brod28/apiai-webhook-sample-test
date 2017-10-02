@@ -51,8 +51,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-    console.log("test log");
-    console.error("test err");
+    console.error(requestBody);
     // if neccesary excute business rules and store results in context 
     try
     {

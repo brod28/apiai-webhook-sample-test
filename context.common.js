@@ -208,9 +208,6 @@ module.exports = {
 
         msg
         .send()
-        .then(msg => 
-            console.log(msg.getCreateResponse())
-        )
         .catch(err => 
             console.error(err)
         );
