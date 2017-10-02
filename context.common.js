@@ -147,7 +147,77 @@ module.exports = {
     }).value;
 
     return country_data;
-  }
+  },
+
+  //basechat
+    intent_analytics(requestBody,speech){
+        this.analytics(
+            requestBody.sessionId,
+            requestBody.result.resolvedQuery,
+            requestBody.id,
+            "me",
+            requestBody.result.action,
+            requestBody.timestamp
+        );
+        this.analytics(
+            requestBody.sessionId,
+            speech,
+            undefined,
+            "agent",
+            requestBody.result.action,
+            requestBody.timestamp);
+    },
+  
+    analytics(sessionId,message,messageId,type,intent,timestamp){
+
+        let chatbase = require('@google/chatbase');
+        
+        let msg = chatbase.newMessage('2f56a676-4165-469e-a60f-8e48de8f129c')
+        // WARNING: setTimestamp() should only be called with a Unix Epoch with MS precision
+        .setTimestamp(Date.now().toString()) // Only unix epochs with Millisecond precision
+        .setPlatform('Web-with-infographics') // sets the platform to the given value
+        .setMessage(message) // the message sent by either user or agent
+    //    .setAsFeedback() // sets the message as feedback from the user
+    //    .setAsNotFeedback() // sets the message as a regular message -- this is the default
+        .setUserId(sessionId) // a unique string identifying the user which the bot is interacting with
+        .setVersion('1.0'); // the version that the deployed bot is
+        // if it is agent or person
+        if(type!=messageId){
+            msg
+            .setMessageId(messageId); // the id of the message, this is optional
+        }
+
+        if(type=="me"){
+            msg
+            .setIntent(intent) // the intent of the sent message (does not have to be set for agent messages)
+            .setAsTypeUser();    
+        }
+        else{
+            msg
+            .setAsTypeAgent();    
+        }
+
+        // if it is Handle or not
+        if(intent.includes("fallback")){
+            msg
+            .setAsNotHandled();    
+        }
+        else{
+            msg
+            .setAsHandled();    
+        }
+
+        msg
+        .send()
+        .then(msg => 
+            console.log(msg.getCreateResponse())
+        )
+        .catch(err => 
+            console.error(err)
+        );
+
+    }
+
 };
 
 

@@ -67,8 +67,9 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     let template=getTemplate(requestBody.result.action);
     // build the speech to the user
     speech = getSpeech(template, parameterscontextout);
-    
 
+    const context_common = require('./context.common.js');
+    context_common.intent_analytics(requestBody,speech);
 
     // return object that works for api ai
     return {
