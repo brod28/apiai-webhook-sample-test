@@ -57,7 +57,7 @@ module.exports = {
 // calculate transportation cost
   get_transportation_cost(requestBody){
     
-    let transportationType=this.get_parameters(requestBody).TransportationType;
+    let transportationType=this.get_parameters(requestBody).TransportationType[0];
 
     let area_data=this.get_area_data(requestBody);
 
