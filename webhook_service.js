@@ -68,6 +68,8 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     // build the speech to the user
     speech = getSpeech(template, parameterscontextout);
     
+
+
     // return object that works for api ai
     return {
         speech: speech,
