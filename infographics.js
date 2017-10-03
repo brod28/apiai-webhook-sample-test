@@ -10,6 +10,7 @@ module.exports = {
 
     parameterscontextout["Infographics"]={
         number:1,
+        conversion_rate:1.13,
         data_infographic:{
             country_data:country_data
         }
@@ -18,7 +19,8 @@ module.exports = {
 
   infographic_2(parameterscontextout,requestBody){
     parameterscontextout["Infographics"]={
-        number:2
+        number:2,
+        conversion_rate:1.13
     };
   },
 
@@ -27,6 +29,7 @@ module.exports = {
 
     parameterscontextout["Infographics"]={
         number:3,
+        conversion_rate:1.13,
         data_infographic:area_data
     };
   },
@@ -43,6 +46,7 @@ module.exports = {
 
     parameterscontextout["Infographics"]={
         number:4,
+        conversion_rate:1.13,
         data_infographic:data_infographic
     };
   },
@@ -52,6 +56,7 @@ module.exports = {
 
     parameterscontextout["Infographics"]={
         number:5,
+        conversion_rate:1.13,
         data_infographic:area_data
     };
   },
@@ -60,6 +65,7 @@ module.exports = {
     let grocerries_cost=data.grocerries_cost;
     parameterscontextout["Infographics"]={
         number:6,
+        conversion_rate:1.13,
         data_infographic:grocerries_cost
     };
   },
@@ -74,6 +80,7 @@ module.exports = {
 
     parameterscontextout["Infographics"]={
         number:7,
+        conversion_rate:1.13,
         data_infographic:cost
     };
   },
@@ -87,6 +94,7 @@ module.exports = {
     
     parameterscontextout["Infographics"]={
         number:8,
+        conversion_rate:1.13,
         data_infographic:{
             user_name:parameterscontextout["user_name"],
             distination_city:parameterscontextout["distination_city"],
