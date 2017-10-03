@@ -99,7 +99,8 @@ module.exports = {
     let cost={
         rent_cost:context_common.get_rent_cost(requestBody),
         transportation_cost:context_common.get_transportation_cost(requestBody),
-        groceries_cost:context_common.get_groceries_cost(requestBody)
+        groceries_cost:context_common.get_groceries_cost(requestBody),
+        user_name:parameterscontextout["user_name"]
     }; 
 
     parameterscontextout["Infographics"]={
@@ -109,7 +110,6 @@ module.exports = {
         original_currency_sign:"€",
         distination_currency:"Pound",
         distination_currency_sign:"£",
-        user_name:parameterscontextout["user_name"],
         data_infographic:cost
     };
   },
