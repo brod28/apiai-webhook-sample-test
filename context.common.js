@@ -23,6 +23,7 @@ module.exports = {
       parameterscontextout["commutinggroceries_amount_text"]="As you can see that takes your total minimum expense to ‎£"+amount+"."
     }
     else{
+      amount=amount+  this.get_rent_cost(requestBody);
       parameterscontextout["commutinggroceries_amount_text"]="I've added ‎£"+amount+" to your expenses"
     }
   
