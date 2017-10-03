@@ -40,6 +40,7 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     
     //store the action in context
     parameterscontextout["action"]=requestBody.result.action;
+    parameterscontextout["log_id"]=requestBody.sessionId+" "+ requestBody.id +" ==>> ";
     //set next event to fire to empty (not to fire)
     parameterscontextout["fire_event"]="";
     //set next infographics to no infographics
@@ -51,18 +52,18 @@ var logic_proccessor=function(requestBody,parameterscontextout){
     parameterscontextout["user_name"]="John";
     
 
-    console.log("action "+requestBody.result.action);
-    console.log("resolvedQuery "+requestBody.result.resolvedQuery);
+    console.log(parameterscontextout["log_id"]+"action "+requestBody.result.action);
+    console.log(parameterscontextout["log_id"]+"resolvedQuery "+requestBody.result.resolvedQuery);
     
-    console.log("requestBody "+JSON.stringify(requestBody));
+    console.log(parameterscontextout["log_id"]+"requestBody "+JSON.stringify(requestBody));
     // if neccesary excute business rules and store results in context 
     try
     {
         parameterscontextout=getContext(requestBody.result.action,parameterscontextout,requestBody);
     }
     catch(err){
-        console.error("error run logic for intent "+err);
-        console.error("error run logic for intent "+ requestBody);
+        console.error(parameterscontextout["log_id"]+"error run logic for intent "+err);
+        console.error(parameterscontextout["log_id"]+"error run logic for intent "+ requestBody);
     }
     
     // get the template
@@ -80,9 +81,9 @@ var logic_proccessor=function(requestBody,parameterscontextout){
         source: 'apiai-webhook-sample',
         contextOut: [{"name":"datakeeper", "lifespan":100, "parameters":parameterscontextout}]
     };
-    console.log("speech " +speech);
-    console.log("event " +parameterscontextout["fire_event"]);
-    console.log("response " +JSON.stringify(retval));
+    console.log(parameterscontextout["log_id"]+"speech " +speech);
+    console.log(parameterscontextout["log_id"]+"event " +parameterscontextout["fire_event"]);
+    console.log(parameterscontextout["log_id"]+"response " +JSON.stringify(retval));
 
     // return object that works for api ai
     return retval;

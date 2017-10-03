@@ -1,33 +1,23 @@
 {
-  "id": "45c79d07-943c-4afd-99f1-19d27eb41580",
-  "timestamp": "2017-10-02T21:32:10.131Z",
+  "id": "a86fb320-add0-4dc0-af2c-a1bf7dd63504",
+  "timestamp": "2017-10-03T07:24:45.734Z",
   "lang": "en",
   "result": {
     "source": "agent",
-    "resolvedQuery": "next",
+    "resolvedQuery": "original_city_question",
     "speech": "",
-    "action": "ben.original_city.enterance",
+    "action": "ben.original_city.question",
     "actionIncomplete": false,
     "parameters": {},
     "contexts": [
       {
-        "name": "required_city_from",
-        "parameters": {},
-        "lifespan": 99
-      },
-      {
-        "name": "next",
-        "parameters": {},
-        "lifespan": 0
-      },
-      {
         "name": "datakeeper",
         "parameters": {
           "your_company": "Goppa",
-          "fire_event": "next",
+          "fire_event": "original_city_question",
           "Infographics": {},
           "user_name": "John",
-          "action": "ben.input.welcome",
+          "action": "ben.original_city.enterance",
           "distination_city": "London"
         },
         "lifespan": 99
@@ -35,42 +25,57 @@
       {
         "name": "required_rent_summary",
         "parameters": {},
-        "lifespan": 99
+        "lifespan": 98
       },
       {
         "name": "required_grocery",
         "parameters": {},
-        "lifespan": 99
+        "lifespan": 98
       },
       {
         "name": "required_transportation",
         "parameters": {},
-        "lifespan": 99
+        "lifespan": 98
       },
       {
         "name": "required_rent_area",
         "parameters": {},
-        "lifespan": 99
+        "lifespan": 98
+      },
+      {
+        "name": "not_required_city_from",
+        "parameters": {},
+        "lifespan": 100
+      },
+      {
+        "name": "benoriginal_cityquestion-followup",
+        "parameters": {},
+        "lifespan": 2
+      },
+      {
+        "name": "original_city_question",
+        "parameters": {},
+        "lifespan": 0
       },
       {
         "name": "required_rent_flattype",
         "parameters": {},
-        "lifespan": 99
+        "lifespan": 98
       }
     ],
     "metadata": {
-      "intentId": "8442fa37-0f93-444a-a77b-3df41d6612f8",
+      "intentId": "fc45e1af-dbfa-4a00-95a1-7e6f9128e603",
       "webhookUsed": "true",
       "webhookForSlotFillingUsed": "false",
-      "intentName": "ben.original_city.enterance"
+      "intentName": "ben.original_city.question"
     },
     "fulfillment": {
-      "speech": "",
+      "speech": "Where are you from?",
       "messages": [
         {
           "type": 0,
-          "id": "4b7c9d7b-fa56-4012-8a25-0d65dc875faa",
-          "speech": ""
+          "id": "ea788089-dd0c-41ad-8815-895943b49494",
+          "speech": "Where are you from?"
         }
       ]
     },
@@ -80,5 +85,5 @@
     "code": 200,
     "errorType": "success"
   },
-  "sessionId": "ade06848-efad-127c-ad0e-37e9db6392b5"
+  "sessionId": "f12fddb9-57a7-5202-8a99-5dc57669ccca"
 }
