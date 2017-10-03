@@ -109,12 +109,21 @@ module.exports = {
         original_currency_sign:"€",
         distination_currency:"Pound",
         distination_currency_sign:"£",
+        user_name:parameterscontextout["user_name"],
         data_infographic:cost
     };
   },
 
   infographic_8(parameterscontextout,requestBody){
     let user_cost={
+        rent_cost:context_common.get_rent_cost(requestBody),
+        transportation_cost:context_common.get_transportation_cost(requestBody),
+        groceries_cost:context_common.get_groceries_cost(requestBody)
+    }; 
+
+    let area_data=context_common.get_area_data(requestBody);
+    
+    let cohort_cost={
         rent_cost:context_common.get_rent_cost(requestBody),
         transportation_cost:context_common.get_transportation_cost(requestBody),
         groceries_cost:context_common.get_groceries_cost(requestBody)
@@ -131,6 +140,7 @@ module.exports = {
             user_name:parameterscontextout["user_name"],
             distination_city:parameterscontextout["distination_city"],
             area_to_stay:context_common.get_parameters(requestBody).area_to_stay,
+            transportationtype:context_common.get_parameters(requestBody).TransportationType[0],
             user_cost:user_cost,
             others_cost:user_cost
         }
