@@ -20,10 +20,10 @@ module.exports = {
 
     let amount=groceries_cost+transportation_cost;
     if(not_required_grocery!=-1 && not_required_transportation!=-1){
+      amount=amount+  this.get_rent_cost(requestBody);
       parameterscontextout["commutinggroceries_amount_text"]="As you can see that takes your total minimum expense to ‎£"+amount+"."
     }
     else{
-      amount=amount+  this.get_rent_cost(requestBody);
       parameterscontextout["commutinggroceries_amount_text"]="I've added ‎£"+amount+" to your expenses"
     }
   
